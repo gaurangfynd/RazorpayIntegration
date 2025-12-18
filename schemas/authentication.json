@@ -1,0 +1,82 @@
+{
+    "parameters": [
+        {
+            "meta": {
+                "value": "access_token",
+                "options": [
+                    {
+                        "label": "Access Token",
+                        "value": "access_token"
+                    }
+                ],
+                "displayName": "Authentication Type",
+                "displayType": "hidden"
+            },
+            "name": "type"
+        }
+    ],
+    "access_token": {
+        "token": {
+            "url": "https://api.razorpay.com/v1/orders",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "error": {
+                    "code": "{{response.status}}",
+                    "message": "{{response.data.message}}"
+                },
+                "output": "{{response.data}}"
+            }
+        },
+        "validate": {
+            "url": "https://api.razorpay.com/v1/orders?count=2",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "error": {
+                    "code": "{{response.status}}",
+                    "message": "{{response.data.message}}"
+                },
+                "output": "{{response.data}}"
+            }
+        },
+        "parameters": [
+            {
+                "meta": {
+                    "validation": {
+                        "required": true,
+                        "requiredDetail": {
+                            "errorMsg": "Client ID is required"
+                        }
+                    },
+                    "description": "Your Razorpay application Client ID",
+                    "displayName": "Client ID",
+                    "displayType": "text",
+                    "placeholder": "Enter Client ID"
+                },
+                "name": "client_id"
+            },
+            {
+                "meta": {
+                    "validation": {
+                        "required": true,
+                        "requiredDetail": {
+                            "errorMsg": "Consumer secret is required"
+                        }
+                    },
+                    "description": "Your Razorpay application consumer secret",
+                    "displayName": "Consumer secret",
+                    "displayType": "password",
+                    "placeholder": "Enter Consumer secret"
+                },
+                "name": "client_secret"
+            }
+        ]
+    }
+}

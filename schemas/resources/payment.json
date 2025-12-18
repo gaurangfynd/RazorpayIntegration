@@ -1,0 +1,147 @@
+{
+    "parameters": [
+        {
+            "name": "operation",
+            "meta": {
+                "displayName": "Operation",
+                "displayType": "select",
+                "placeholder": "Select an operation",
+                "description": "Select the operation you want to perform.",
+                "options": [
+                    {
+                        "label": "Fetch all payments",
+                        "value": "payment.fetchPayments",
+                        "description": "Fetch payments."
+                    },
+                    {
+                        "label": "Fetch payment by ID",
+                        "value": "payment.fetchPaymentByPaymentId",
+                        "description": "Fetch payment details with the help of payment ID."
+                    },
+                    {
+                        "label": "Fetch card details of payment",
+                        "value": "payment.fetchCardDetailsOfPayment",
+                        "description": "Fetch card details of the payment."
+                    }
+                ],
+                "validation": {
+                    "required": true
+                },
+                "dependencies": {
+                    "conditions": [
+                        {
+                            "field": "resource",
+                            "operator": "EQUALS",
+                            "value": "payment"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "fetchPayments": {
+        "parameters": [
+            {
+                "name": "count",
+                "meta": {
+                    "displayName": "Number of payments",
+                    "displayType": "text",
+                    "placeholder": "Enter the number of payments",
+                    "description": "Enter the number of payments you want to fetch.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            },
+            {
+                "name": "skip",
+                "meta": {
+                    "displayName": "Number of payments to be skip",
+                    "displayType": "text",
+                    "placeholder": "Enter the number of payments to be skip",
+                    "description": "Enter the number of payments you don't want to fetch.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/payments?count={{parameters.count}}&skip={{parameters.skip}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchPaymentByPaymentId": {
+        "parameters": [
+            {
+                "name": "paymentId",
+                "meta": {
+                    "displayName": "Payments ID",
+                    "displayType": "text",
+                    "placeholder": "Enter the payments ID",
+                    "description": "Enter the payments ID for which you want to fetch payment details.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/payments/{{parameters.paymentId}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchCardDetailsOfPayment": {
+        "parameters": [
+            {
+                "name": "paymentId",
+                "meta": {
+                    "displayName": "Payments ID",
+                    "displayType": "text",
+                    "placeholder": "Enter the payments ID",
+                    "description": "Enter the payments ID for which you want to fetch card details.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/payments/{{parameters.paymentId}}/card",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    }
+}

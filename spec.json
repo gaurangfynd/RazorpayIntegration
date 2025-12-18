@@ -1,0 +1,17 @@
+{
+    "id": "d843d246-9cf1-465c-a86d-3439aa68f23e",
+    "name": "Razorpay",
+    "description": {
+        "trigger": "Razorpay test workflow",
+        "integration": "Razorpay test worflow"
+    },
+    "icon": "https://cdn.pixelbin.io/v2/fyndcloud/original/Temporal/Uploads/bolt/e8b51f71-6062-4c30-958e-f87351ed13bf/images/Pipedrive_1765867504947.svg",
+    "activity_type": "customActivity",
+    "trigger_type": null,
+    "meta": {
+        "ai_description": {
+            "trigger": "Razorpay test workflow",
+            "integration": "Razorpay test workflow"
+        }
+    }
+}

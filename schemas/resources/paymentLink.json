@@ -1,0 +1,893 @@
+{
+    "parameters": [
+        {
+            "name": "operation",
+            "meta": {
+                "displayName": "Operation",
+                "displayType": "select",
+                "placeholder": "Select an operation",
+                "description": "Select the operation you want to perform.",
+                "options": [
+                    {
+                        "label": "Create payment link",
+                        "value": "paymentLink.createPaymentLink",
+                        "description": "Create a payment link using basic details such as amount, expiry date etc."
+                    },
+                    {
+                        "label": "Fetch all payment links",
+                        "value": "paymentLink.fetchPaymentLinks",
+                        "description": "Fetch details of all the Standard Payment Links."
+                    },
+                    {
+                        "label": "Fetch payment link details by ID",
+                        "value": "paymentLink.fetchPaymentLinkById",
+                        "description": "Fetch payment link details with the help of payment link ID."
+                    }
+                ],
+                "validation": {
+                    "required": true
+                },
+                "dependencies": {
+                    "conditions": [
+                        {
+                            "field": "resource",
+                            "operator": "EQUALS",
+                            "value": "paymentLink"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "createPaymentLink": {
+        "definition": {
+            "method": "POST",
+            "url": "https://api.razorpay.com/v1/payment_links",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "body": {
+                "amount": "{{parameters.amount}}",
+                "currency": "{{parameters.currency}}",
+                "reference_id": "{{parameters.reference_id}}",
+                "description": "{{parameters.description}}",
+                "notes": "{{parameters.notes}}",
+                "callback_url": "{{parameters.callback_url}}",
+                "callback_method": "{{parameters.callback_method}}",
+                "customer": {
+                    "name": "{{parameters.customer_name}}",
+                    "contact": "{{parameters.phone_number}}",
+                    "email": "{{parameters.customer_email}}"
+                }
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        },
+        "parameters": [
+            {
+                "name": "currency",
+                "meta": {
+                    "displayName": "currency",
+                    "displayType": "select",
+                    "placeholder": "Enter the currency",
+                    "description": "Enter the currency.",
+                    "validation": {
+                        "required": true,
+                        "requiredDetail": {
+                            "errorMsg": "Country is a required field"
+                        }
+                    },
+                    "options": [
+                        {
+                            "value": "AED",
+                            "label": "United Arab Emirates Dirham"
+                        },
+                        {
+                            "value": "ALL",
+                            "label": "Albanian lek"
+                        },
+                        {
+                            "value": "AMD",
+                            "label": "Armenian dram"
+                        },
+                        {
+                            "value": "AUD",
+                            "label": "Australian dollar"
+                        },
+                        {
+                            "value": "AWG",
+                            "label": "Aruban florin"
+                        },
+                        {
+                            "value": "AZN",
+                            "label": "Azerbaijan Manat"
+                        },
+                        {
+                            "value": "BAM",
+                            "label": "Convertible Mark"
+                        },
+                        {
+                            "value": "BBD",
+                            "label": "Barbadian dollar"
+                        },
+                        {
+                            "value": "BDT",
+                            "label": "Bangladeshi taka"
+                        },
+                        {
+                            "value": "BGN",
+                            "label": "Bulgarian Lev"
+                        },
+                        {
+                            "value": "BHD",
+                            "label": "Bahraini Dinar"
+                        },
+                        {
+                            "value": "BIF",
+                            "label": "Burundi Franc"
+                        },
+                        {
+                            "value": "BMD",
+                            "label": "Bermudian dollar"
+                        },
+                        {
+                            "value": "BND",
+                            "label": "Brunei dollar"
+                        },
+                        {
+                            "value": "BOB",
+                            "label": "Bolivian boliviano"
+                        },
+                        {
+                            "value": "BRL",
+                            "label": "Brazilian Real"
+                        },
+                        {
+                            "value": "BSD",
+                            "label": "Bahamian dollar"
+                        },
+                        {
+                            "value": "BTN",
+                            "label": "Bhutanese Ngultrum"
+                        },
+                        {
+                            "value": "BWP",
+                            "label": "Botswana pula"
+                        },
+                        {
+                            "value": "BZD",
+                            "label": "Belize dollar"
+                        },
+                        {
+                            "value": "CAD",
+                            "label": "Canadian dollar"
+                        },
+                        {
+                            "value": "CHF",
+                            "label": "Swiss franc"
+                        },
+                        {
+                            "value": "CLP",
+                            "label": "Chilean Peso"
+                        },
+                        {
+                            "value": "CNY",
+                            "label": "Chinese yuan renminbi"
+                        },
+                        {
+                            "value": "COP",
+                            "label": "Colombian peso"
+                        },
+                        {
+                            "value": "CRC",
+                            "label": "Costa Rican colon"
+                        },
+                        {
+                            "value": "CUP",
+                            "label": "Cuban peso"
+                        },
+                        {
+                            "value": "CVE",
+                            "label": "Cabo Verde Escudo"
+                        },
+                        {
+                            "value": "CZK",
+                            "label": "Czech koruna"
+                        },
+                        {
+                            "value": "DJF",
+                            "label": "Djibouti Franc"
+                        },
+                        {
+                            "value": "DKK",
+                            "label": "Danish krone"
+                        },
+                        {
+                            "value": "DOP",
+                            "label": "Dominican peso"
+                        },
+                        {
+                            "value": "DZD",
+                            "label": "Algerian dinar"
+                        },
+                        {
+                            "value": "EGP",
+                            "label": "Egyptian pound"
+                        },
+                        {
+                            "value": "ETB",
+                            "label": "Ethiopian birr"
+                        },
+                        {
+                            "value": "EUR",
+                            "label": "European euro"
+                        },
+                        {
+                            "value": "FJD",
+                            "label": "Fijian dollar"
+                        },
+                        {
+                            "value": "GBP",
+                            "label": "Pound sterling"
+                        },
+                        {
+                            "value": "GHS",
+                            "label": "Ghanian Cedi"
+                        },
+                        {
+                            "value": "GIP",
+                            "label": "Gibraltar pound"
+                        },
+                        {
+                            "value": "GMD",
+                            "label": "Gambian dalasi"
+                        },
+                        {
+                            "value": "GNF",
+                            "label": "Guinean Franc"
+                        },
+                        {
+                            "value": "GTQ",
+                            "label": "Guatemalan quetzal"
+                        },
+                        {
+                            "value": "GYD",
+                            "label": "Guyanese dollar"
+                        },
+                        {
+                            "value": "HKD",
+                            "label": "Hong Kong dollar"
+                        },
+                        {
+                            "value": "HNL",
+                            "label": "Honduran lempira"
+                        },
+                        {
+                            "value": "HRK",
+                            "label": "Croatian kuna"
+                        },
+                        {
+                            "value": "HTG",
+                            "label": "Haitian gourde"
+                        },
+                        {
+                            "value": "HUF",
+                            "label": "Hungarian forint"
+                        },
+                        {
+                            "value": "IDR",
+                            "label": "Indonesian rupiah"
+                        },
+                        {
+                            "value": "ILS",
+                            "label": "Israeli new shekel"
+                        },
+                        {
+                            "value": "INR",
+                            "label": "Indian rupee"
+                        },
+                        {
+                            "value": "IQD",
+                            "label": "Iraqi Dinar"
+                        },
+                        {
+                            "value": "ISK",
+                            "label": "Iceland Krona"
+                        },
+                        {
+                            "value": "JMD",
+                            "label": "Jamaican dollar"
+                        },
+                        {
+                            "value": "JOD",
+                            "label": "Jordanian Dinar"
+                        },
+                        {
+                            "value": "JPY",
+                            "label": "Japanese Yen"
+                        },
+                        {
+                            "value": "KES",
+                            "label": "Kenyan shilling"
+                        },
+                        {
+                            "value": "KGS",
+                            "label": "Kyrgyzstani som"
+                        },
+                        {
+                            "value": "KHR",
+                            "label": "Cambodian riel"
+                        },
+                        {
+                            "value": "KMF",
+                            "label": "Comorian Franc"
+                        },
+                        {
+                            "value": "KRW",
+                            "label": "Korean Won"
+                        },
+                        {
+                            "value": "KWD",
+                            "label": "Kuwaiti Dinar"
+                        },
+                        {
+                            "value": "KYD",
+                            "label": "Cayman Islands dollar"
+                        },
+                        {
+                            "value": "KZT",
+                            "label": "Kazakhstani tenge"
+                        },
+                        {
+                            "value": "LAK",
+                            "label": "Lao kip"
+                        },
+                        {
+                            "value": "LKR",
+                            "label": "Sri Lankan rupee"
+                        },
+                        {
+                            "value": "LRD",
+                            "label": "Liberian dollar"
+                        },
+                        {
+                            "value": "LSL",
+                            "label": "Lesotho loti"
+                        },
+                        {
+                            "value": "MAD",
+                            "label": "Moroccan dirham"
+                        },
+                        {
+                            "value": "MDL",
+                            "label": "Moldovan leu"
+                        },
+                        {
+                            "value": "MGA",
+                            "label": "Malagasy Ariary"
+                        },
+                        {
+                            "value": "MKD",
+                            "label": "Macedonian denar"
+                        },
+                        {
+                            "value": "MMK",
+                            "label": "Myanmar kyat"
+                        },
+                        {
+                            "value": "MNT",
+                            "label": "Mongolian tugrik"
+                        },
+                        {
+                            "value": "MOP",
+                            "label": "Macanese pataca"
+                        },
+                        {
+                            "value": "MUR",
+                            "label": "Mauritian rupee"
+                        },
+                        {
+                            "value": "MVR",
+                            "label": "Maldivian rufiyaa"
+                        },
+                        {
+                            "value": "MWK",
+                            "label": "Malawian kwacha"
+                        },
+                        {
+                            "value": "MXN",
+                            "label": "Mexican peso"
+                        },
+                        {
+                            "value": "MYR",
+                            "label": "Malaysian ringgit"
+                        },
+                        {
+                            "value": "MZN",
+                            "label": "Mozambique Metical"
+                        },
+                        {
+                            "value": "NAD",
+                            "label": "Namibian dollar"
+                        },
+                        {
+                            "value": "NGN",
+                            "label": "Nigerian naira"
+                        },
+                        {
+                            "value": "NIO",
+                            "label": "Nicaraguan cordoba"
+                        },
+                        {
+                            "value": "NOK",
+                            "label": "Norwegian krone"
+                        },
+                        {
+                            "value": "NPR",
+                            "label": "Nepalese rupee"
+                        },
+                        {
+                            "value": "NZD",
+                            "label": "New Zealand dollar"
+                        },
+                        {
+                            "value": "OMR",
+                            "label": "Rial Omani"
+                        },
+                        {
+                            "value": "PEN",
+                            "label": "Peruvian sol"
+                        },
+                        {
+                            "value": "PGK",
+                            "label": "Papua New Guinean kina"
+                        },
+                        {
+                            "value": "PHP",
+                            "label": "Philippine peso"
+                        },
+                        {
+                            "value": "PKR",
+                            "label": "Pakistani rupee"
+                        },
+                        {
+                            "value": "PLN",
+                            "label": "Polish Zloty"
+                        },
+                        {
+                            "value": "PYG",
+                            "label": "Paraguayan Guarani"
+                        },
+                        {
+                            "value": "QAR",
+                            "label": "Qatari riyal"
+                        },
+                        {
+                            "value": "RON",
+                            "label": "Romanian Leu"
+                        },
+                        {
+                            "value": "RSD",
+                            "label": "Serbian Dinar"
+                        },
+                        {
+                            "value": "RUB",
+                            "label": "Russian ruble"
+                        },
+                        {
+                            "value": "RWF",
+                            "label": "Rwanda Franc"
+                        },
+                        {
+                            "value": "SAR",
+                            "label": "Saudi Arabian riyal"
+                        },
+                        {
+                            "value": "SCR",
+                            "label": "Seychellois rupee"
+                        },
+                        {
+                            "value": "SEK",
+                            "label": "Swedish krona"
+                        },
+                        {
+                            "value": "SGD",
+                            "label": "Singapore dollar"
+                        },
+                        {
+                            "value": "SLL",
+                            "label": "Sierra Leonean leone"
+                        },
+                        {
+                            "value": "SOS",
+                            "label": "Somali shilling"
+                        },
+                        {
+                            "value": "SVC",
+                            "label": "Salvadoran colón"
+                        },
+                        {
+                            "value": "SZL",
+                            "label": "Swazi lilangeni"
+                        },
+                        {
+                            "value": "THB",
+                            "label": "Thai baht"
+                        },
+                        {
+                            "value": "TND",
+                            "label": "Tunisian Dinar"
+                        },
+                        {
+                            "value": "TRY",
+                            "label": "Turkish Lira"
+                        },
+                        {
+                            "value": "TTD",
+                            "label": "Trinidad and Tobago dollar"
+                        },
+                        {
+                            "value": "TWD",
+                            "label": "New Taiwan Dollar"
+                        },
+                        {
+                            "value": "TZS",
+                            "label": "Tanzanian shilling"
+                        },
+                        {
+                            "value": "UAH",
+                            "label": "Ukrainian Hryvnia"
+                        },
+                        {
+                            "value": "UGX",
+                            "label": "Uganda Shilling"
+                        },
+                        {
+                            "value": "USD",
+                            "label": "United States dollar"
+                        },
+                        {
+                            "value": "UYU",
+                            "label": "Uruguayan peso"
+                        },
+                        {
+                            "value": "UZS",
+                            "label": "Uzbekistani so'm"
+                        },
+                        {
+                            "value": "VND",
+                            "label": "Vietnamese Dong"
+                        },
+                        {
+                            "value": "VUV",
+                            "label": "Vatu"
+                        },
+                        {
+                            "value": "XAF",
+                            "label": "CFA Franc BEAC"
+                        },
+                        {
+                            "value": "XCD",
+                            "label": "East Caribbean Dollar"
+                        },
+                        {
+                            "value": "XOF",
+                            "label": "CFA Franc BCEAO"
+                        },
+                        {
+                            "value": "XPF",
+                            "label": "CFP Franc"
+                        },
+                        {
+                            "value": "YER",
+                            "label": "Yemeni rial"
+                        },
+                        {
+                            "value": "ZAR",
+                            "label": "South African rand"
+                        },
+                        {
+                            "value": "ZMW",
+                            "label": "Zambian Kwacha"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "amount",
+                "meta": {
+                    "displayName": "Amount",
+                    "displayType": "number",
+                    "placeholder": "Enter the amount",
+                    "description": "Enter the amout.",
+                    "validation": {
+                        "required": true
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            },
+            {
+                "name": "accept_partial",
+                "meta": {
+                    "displayName": "Accept partial amount",
+                    "description": "Enable this to let Razorpay accept partial amount using payment link.",
+                    "displayType": "toggle",
+                    "placeholder": "Accept partial amount",
+                    "readOnly": false,
+                    "value": false,
+                    "validation": {
+                        "disabled": false
+                    }
+                }
+            },
+            {
+                "name": "first_min_partial_amount",
+                "meta": {
+                    "displayName": "First minimum partial amount",
+                    "displayType": "number",
+                    "placeholder": "Enter the first minimum partial amount",
+                    "description": "Enter the first minimum partial amount.",
+                    "validation": {
+                        "required": true
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    },
+                    "dependencies": {
+                        "conditions": [
+                            {
+                                "field": "accept_partial",
+                                "value": true,
+                                "operator": "EQUALS"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "reference_id",
+                "meta": {
+                    "displayName": "Reference ID",
+                    "displayType": "text",
+                    "placeholder": "Enter the reference ID",
+                    "description": "Enter the reference ID.",
+                    "validation": {
+                        "required": false,
+                        "max": 40
+                    }
+                }
+            },
+            {
+                "name": "description",
+                "meta": {
+                    "displayName": "Description",
+                    "displayType": "textarea",
+                    "placeholder": "Enter description",
+                    "description": "Brief description of the Payment Link.",
+                    "validation": {
+                        "required": false,
+                        "maxLength": 2048
+                    },
+                    "htmlProps": {
+                        "minRows": 4,
+                        "maxRows": 4
+                    }
+                }
+            },
+            {
+                "name": "customer_name",
+                "meta": {
+                    "displayName": "Customer name",
+                    "displayType": "text",
+                    "placeholder": "Enter customer's name",
+                    "description": "Enter customer's name.",
+                    "validation": {
+                        "required": false
+                    }
+                }
+            },
+            {
+                "name": "customer_email",
+                "meta": {
+                    "displayName": "Customer email",
+                    "displayType": "email",
+                    "placeholder": "Enter customer's email",
+                    "description": "Enter customer's email.",
+                    "validation": {
+                        "required": false
+                    }
+                }
+            },
+            {
+                "name": "phone_number",
+                "meta": {
+                    "displayName": "Enter customer's phone number",
+                    "description": "Enter customer's phone number.",
+                    "displayType": "text",
+                    "placeholder": "Enter phone number",
+                    "validation": {
+                        "required": false
+                    },
+                    "readOnly": false,
+                    "htmlProps": {
+                    
+                    },
+                    "value": "+91"
+                }
+            },
+            {
+                "name": "notes",
+                "meta": {
+                    "displayName": "Notes",
+                    "displayType": "keyvalue",
+                    "placeholder": "Enter notes",
+                    "description": "Enter the notes, ex:- note_key: Payment Link for Groceries.",
+                    "validation": {
+                        "max": 15
+                    },
+                    "children": [
+                        {
+                            "name": "key",
+                            "meta": {
+                                "displayType": "text",
+                                "displayName": "Key",
+                                "validation": {
+                                    "required": true
+                                }
+                            }
+                        },
+                        {
+                            "name": "value",
+                            "meta": {
+                                "displayType": "text",
+                                "displayName": "Value",
+                                "validation": {
+                                    "required": true
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "notify_sms",
+                "meta": {
+                    "displayName": "SMS Notification Handling",
+                    "description": "Enable this to let Razorpay send SMS notifications for the Payment Link. If disabled, you are responsible for sending SMS notifications.",
+                    "displayType": "toggle",
+                    "placeholder": "Enable SMS notification",
+                    "readOnly": false,
+                    "value": false,
+                    "validation": {
+                        "disabled": false
+                    }
+                }
+            },
+            {
+                "name": "notify_email",
+                "meta": {
+                    "displayName": "Email Notification Handling",
+                    "description": "Enable this to let Razorpay send email notifications for the Payment Link. If disabled, you are responsible for sending email notifications.",
+                    "displayType": "toggle",
+                    "placeholder": "Enable email notification",
+                    "readOnly": false,
+                    "value": false,
+                    "validation": {
+                        "disabled": false
+                    }
+                }
+            },
+            {
+                "name": "reminder_enable",
+                "meta": {
+                    "displayName": "Enable reminder",
+                    "description": "Toggle to enable or disable the reminder.",
+                    "displayType": "toggle",
+                    "placeholder": "Enable reminder",
+                    "readOnly": false,
+                    "value": false,
+                    "validation": {
+                        "disabled": false
+                    }
+                }
+            },
+            {
+                "name": "callback_url",
+                "meta": {
+                    "displayName": "Callback url",
+                    "displayType": "url",
+                    "placeholder": "https://example.com",
+                    "description": "Enter the callback url.",
+                    "validation": {}
+                }
+            },
+            {
+                "name": "callback_method",
+                "meta": {
+                    "displayName": "Callback method",
+                    "displayType": "radio",
+                    "description": "Select callback method of callback url",
+                    "value": "",
+                    "options": [
+                        {
+                            "label": "GET",
+                            "value": "get"
+                        },
+                        {
+                            "label": "POST",
+                            "value": "post"
+                        }
+                    ],
+                    "validation": {
+                        "required": true
+                    },
+                    "dependencies": {
+                        "conditions": [
+                            {
+                                "field": "callback_url",
+                                "operator": "NOT_EMPTY"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "fetchPaymentLinks": {
+        "parameters": [],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/payment_links/",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchPaymentLinkById": {
+        "parameters": [
+            {
+                "name": "paymentLinkId",
+                "meta": {
+                    "displayName": "Payment link ID",
+                    "displayType": "text",
+                    "placeholder": "Enter the payment link ID",
+                    "description": "Enter the payment link ID for which you want to fetch payment link details.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/payment_links/{{parameters.paymentLinkId}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    }
+}

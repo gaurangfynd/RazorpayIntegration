@@ -1,0 +1,86 @@
+{
+    "parameters": [
+        {
+            "name": "operation",
+            "meta": {
+                "displayName": "Operation",
+                "displayType": "select",
+                "placeholder": "Select an operation",
+                "description": "Select the operation you want to perform.",
+                "options": [
+                    {
+                        "label": "Fetch all invoices",
+                        "value": "invoice.fetchInvoices",
+                        "description": "Fetch details of all invoices."
+                    },
+                    {
+                        "label": "Fetch invoice details by ID",
+                        "value": "invoice.fetchInvoiceByInvoiceId",
+                        "description": "Fetch invoice details with the help of invoice ID."
+                    }
+                ],
+                "validation": {
+                    "required": true
+                },
+                "dependencies": {
+                    "conditions": [
+                        {
+                            "field": "resource",
+                            "operator": "EQUALS",
+                            "value": "invoice"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "fetchInvoices": {
+        "parameters": [],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/invoices/",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchInvoiceByInvoiceId": {
+        "parameters": [
+            {
+                "name": "invoiceId",
+                "meta": {
+                    "displayName": "Invoice ID",
+                    "displayType": "text",
+                    "placeholder": "Enter the invoice ID",
+                    "description": "Enter the invoice ID for which you want to fetch invoice details.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/invoices/{{parameters.invoiceId}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    }
+}

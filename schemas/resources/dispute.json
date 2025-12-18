@@ -1,0 +1,87 @@
+{
+    "parameters": [
+        {
+            "name": "operation",
+            "meta": {
+                "displayName": "Operation",
+                "displayType": "select",
+                "placeholder": "Select an operation",
+                "description": "Select the operation you want to perform.",
+                "options": [
+                    {
+                        "label": "Fetch all disputes",
+                        "value": "dispute.fetchDisputes",
+                        "description": "Fetch all disputes raised by customers."
+                    },
+                    {
+                        "label": "Fetch dispute details by ID",
+                        "value": "dispute.fetchDisputeByDisputeId",
+                        "description": "Fetch dispute details using the dispute ID."
+                    }
+                ],
+                "validation": {
+                    "required": true
+                },
+                "dependencies": {
+                    "conditions": [
+                        {
+                            "field": "resource",
+                            "operator": "EQUALS",
+                            "value": "dispute"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "fetchDisputes": {
+        "parameters": [
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/disputes",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchDisputeByDisputeId": {
+        "parameters": [
+            {
+                "name": "disputeId",
+                "meta": {
+                    "displayName": "Dispute ID",
+                    "displayType": "text",
+                    "placeholder": "Enter a dispute ID",
+                    "description": "Enter the dispute ID you want to fetch details for.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/disputes/{{parameters.disputeId}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    }
+}

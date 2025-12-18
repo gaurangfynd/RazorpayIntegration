@@ -1,0 +1,86 @@
+{
+    "parameters": [
+        {
+            "name": "secret",
+            "meta": {
+                "displayName": "Razorpay Account",
+                "displayType": "autocomplete",
+                "placeholder": "Select Razorpay Account",
+                "description": "Razorpay is a secure partner with Boltic. Your credentials are encrypted & can be removed at any time.",
+                "options": [],
+                "config": {
+                    "urlType": "secret",
+                    "method": "get",
+                    "url": "/RAZORPAY?current_page=1&page_size=999",
+                    "labelKey": "name",
+                    "valueKey": "_id"
+                },
+                "htmlProps": {
+                    "showAddNew": true
+                },
+                "value": "",
+                "validation": {
+                    "required": true
+                }
+            }
+        },
+        {
+            "name": "resource",
+            "meta": {
+                "displayName": "Resource",
+                "displayType": "select",
+                "placeholder": "Select a resource",
+                "description": "Select the resource you want to work with.",
+                "options": [
+                    {
+                        "label": "Order",
+                        "value": "order",
+                        "description": "Order will allow you to create, fetch single/multiple orders."
+                    },
+                    {
+                        "label": "Payment",
+                        "value": "payment",
+                        "description": "Payment will allow you to create, fetch single/multiple payments."
+                    },
+                    {
+                        "label": "Dispute",
+                        "value": "dispute",
+                        "description": "Dispute will allow you to retrive all disputes raised by customers."
+                    },
+                    {
+                        "label": "Refund",
+                        "value": "refund",
+                        "description": "Refund will allow you to retrive all refund details."
+                    },
+                    {
+                        "label": "Settlement",
+                        "value": "settlement",
+                        "description": "Settlement will allow you to retrive all settlement details."
+                    },
+                    {
+                        "label": "Invoice",
+                        "value": "invoice",
+                        "description": "Invoice will allow you to retrive all invoice details."
+                    },
+                         {
+                        "label": "Payment Link",
+                        "value": "paymentLink",
+                        "description": "Payment Link will allow you to create, retrive single/multiple payment link details."
+                    }
+                ],
+                "value": "",
+                "validation": {
+                    "required": true
+                },
+                "dependencies": {
+                    "conditions": [
+                        {
+                            "field": "secret",
+                            "operator": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
