@@ -1,2 +1,37 @@
 # Razorpay Authentication
 
+## Overview
+Razorpay is India's leading all-in-one financial solutions platform for businesses, offering a comprehensive suite to accept, process, and disburse online payments through various methods (cards, UPI, wallets, net banking) via a powerful payment gateway.
+
+
+Razorpay APIs are authenticated using an API Key (Key ID and Key Secret) via HTTP Basic authentication.
+
+- **Client ID** = Razorpay **Key ID** 
+- **Client Secret** = Razorpay **Key Secret**
+
+Your credentials are stored as encrypted secrets in Boltic and are used to build the `Authorization` header for each request.
+
+## Authentication Method
+- API Key (Key ID & Key Secret) using HTTP Basic auth
+
+The integration sends:
+- `Authorization: Basic base64(<key_id>:<key_secret>)`
+- `Content-Type: application/json`
+
+## How to Get Test Client ID and Client Secret
+1. Sign in to the Razorpay Dashboard: <a href="https://dashboard.razorpay.com/" target="_blank" rel="noopener">dashboard.razorpay.com</a>
+2. Select **Payments** tab.
+3. Switch to **Test Mode** (left panel toggle button).
+4. Go to **Account & Settings**.
+5. Click **API keys** under Website and app settings.
+6. Click **Generate Key** (or use an existing test key).
+7. Copy and store:
+   - **Key ID** → use as **Client ID** in Boltic.
+   - **Key Secret** → use as **Consumer Secret** in Boltic.
+
+## Notes
+- Keep the **Key Secret** private and treat it like a password.
+- Test keys only work in Test Mode; Live keys only work in Live Mode.
+- If authentication fails, verify you copied the correct Key ID/Secret pair and that the integration is configured with the right environment.
+
+If you need further assistance, contact Boltic support at <a href="mailto:support@boltic.io">support@boltic.io</a>.
