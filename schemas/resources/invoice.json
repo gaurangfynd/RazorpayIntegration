@@ -17,6 +17,11 @@
                         "label": "Fetch invoice details by ID",
                         "value": "invoice.fetchInvoiceByInvoiceId",
                         "description": "Fetch invoice details using the invoice ID."
+                    },
+                    {
+                        "label": "Fetch all invoices of a subscription",
+                        "value": "invoice.fetchInvoicesBySubscriptionId",
+                        "description": "Fetch details of all invoices using the subscription ID."
                     }
                 ],
                 "validation": {
@@ -70,6 +75,40 @@
         "definition": {
             "method": "GET",
             "url": "https://api.razorpay.com/v1/invoices/{{parameters.invoiceId}}",
+            "headers": {
+                "ContentType": "application/json",
+                "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "response": {
+                "output": "{{response.data}}",
+                "error": {
+                    "message": "{{response.data.errors.message}}",
+                    "code": "{{response.data.errors.code}}"
+                }
+            }
+        }
+    },
+    "fetchInvoicesBySubscriptionId": {
+        "parameters": [
+            {
+                "name": "subscriptionId",
+                "meta": {
+                    "displayName": "Subscription ID",
+                    "displayType": "text",
+                    "placeholder": "Enter an subscription ID",
+                    "description": "Enter the subscription ID for which you want to fetch details of all invoices.",
+                    "validation": {
+                        "required": true
+                    }
+                }
+            }
+        ],
+        "definition": {
+            "qs": {
+                "subscription_id": "{{parameters.subscriptionId}}"
+            },
+            "method": "GET",
+            "url": "https://api.razorpay.com/v1/invoices",
             "headers": {
                 "ContentType": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"

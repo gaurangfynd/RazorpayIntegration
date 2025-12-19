@@ -78,8 +78,8 @@
                 "meta": {
                     "displayName": "currency",
                     "displayType": "select",
-                    "placeholder": "Enter the currency",
-                    "description": "Enter the currency.",
+                    "placeholder": "Select the currency",
+                    "description": "Select the currency.",
                     "validation": {
                         "required": true,
                         "requiredDetail": {

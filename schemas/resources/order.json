@@ -669,7 +669,7 @@
                     "validation": {
                         "required": true
                     },
-                      "htmlProps": {
+                    "htmlProps": {
                         "allowDynamic": true
                     }
                 }
@@ -684,7 +684,7 @@
                     "validation": {
                         "required": true
                     },
-                      "htmlProps": {
+                    "htmlProps": {
                         "allowDynamic": true
                     }
                 }
@@ -692,7 +692,11 @@
         ],
         "definition": {
             "method": "GET",
-            "url": "https://api.razorpay.com/v1/orders?count={{parameters.count}}&skip={{parameters.skip}}",
+            "qs": {
+                "count": "{{parameters.count}}",
+                "skip": "{{parameters.skip}}"
+            },
+            "url": "https://api.razorpay.com/v1/orders",
             "headers": {
                 "ContentType": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"

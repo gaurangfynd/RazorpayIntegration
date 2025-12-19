@@ -67,8 +67,12 @@
             }
         ],
         "definition": {
+            "qs": {
+                "count": "{{parameters.count}}",
+                "skip": "{{parameters.skip}}"
+            },
             "method": "GET",
-            "url": "https://api.razorpay.com/v1/payments?count={{parameters.count}}&skip={{parameters.skip}}",
+            "url": "https://api.razorpay.com/v1/payments",
             "headers": {
                 "ContentType": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
