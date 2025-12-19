@@ -16,7 +16,7 @@
                     {
                         "label": "Fetch invoice details by ID",
                         "value": "invoice.fetchInvoiceByInvoiceId",
-                        "description": "Fetch invoice details with the help of invoice ID."
+                        "description": "Fetch invoice details using the invoice ID."
                     }
                 ],
                 "validation": {
@@ -59,8 +59,8 @@
                 "meta": {
                     "displayName": "Invoice ID",
                     "displayType": "text",
-                    "placeholder": "Enter the invoice ID",
-                    "description": "Enter the invoice ID for which you want to fetch invoice details.",
+                    "placeholder": "Enter an invoice ID",
+                    "description": "Enter the invoice ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }

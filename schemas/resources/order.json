@@ -9,7 +9,7 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Create Orders",
+                        "label": "Create order",
                         "value": "order.createOrder",
                         "description": "Create a new order."
                     },
@@ -19,14 +19,14 @@
                         "description": "Fetch orders."
                     },
                     {
-                        "label": "Fetch order by ID",
+                        "label": "Fetch order details by ID",
                         "value": "order.fetchOrderByOrderId",
-                        "description": "Fetch order with the help of ID."
+                        "description": "Fetch order details using the order ID."
                     },
                     {
-                        "label": "Fetch all payments related to order",
+                        "label": "Fetch all payments related to an order",
                         "value": "order.fetchPaymentsByOrderId",
-                        "description": "Fetch payments details associated with order."
+                        "description": "Fetch payment details associated with an order."
                     }
                 ],
                 "validation": {
@@ -77,7 +77,7 @@
                     "validation": {
                         "required": true,
                         "requiredDetail": {
-                            "errorMsg": "Country is a required field"
+                            "errorMsg": "Currency is a required field"
                         }
                     },
                     "options": [
@@ -602,7 +602,7 @@
                     "displayName": "Amount",
                     "displayType": "number",
                     "placeholder": "Enter the amount",
-                    "description": "Enter the amout.",
+                    "description": "Enter the amount.",
                     "validation": {
                         "required": true
                     }
@@ -627,7 +627,7 @@
                     "displayName": "Notes",
                     "displayType": "keyvalue",
                     "placeholder": "Enter notes",
-                    "description": "Enter the notes, ex:- note_key: Payment Link for Groceries.",
+                    "description": "Enter notes (for example: note_key: Payment Link for Groceries).",
                     "validation": {
                         "max": 15
                     },
@@ -665,7 +665,7 @@
                     "displayName": "Number of orders",
                     "displayType": "number",
                     "placeholder": "Enter the number of orders",
-                    "description": "Enter the number of order you want to fetch.",
+                    "description": "Enter the number of orders you want to fetch.",
                     "validation": {
                         "required": true
                     },
@@ -677,10 +677,10 @@
             {
                 "name": "skip",
                 "meta": {
-                    "displayName": "Number of orders to be skip",
+                    "displayName": "Number of orders to skip",
                     "displayType": "number",
-                    "placeholder": "Enter the number of orders to be skip",
-                    "description": "Enter the number of order you don't want to fetch.",
+                    "placeholder": "Enter the number of orders to skip",
+                    "description": "Enter the number of orders to skip.",
                     "validation": {
                         "required": true
                     },
@@ -714,7 +714,7 @@
                     "displayName": "Order ID",
                     "displayType": "text",
                     "placeholder": "Enter the order ID",
-                    "description": "Enter the order ID for which you want to fetch details.",
+                    "description": "Enter the order ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }
@@ -745,7 +745,7 @@
                     "displayName": "Order ID",
                     "displayType": "text",
                     "placeholder": "Enter the order ID",
-                    "description": "Enter the order ID for which you want to fetch payment details associated with that.",
+                    "description": "Enter the order ID you want to fetch associated payment details for.",
                     "validation": {
                         "required": true
                     }

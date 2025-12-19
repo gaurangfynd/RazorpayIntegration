@@ -14,14 +14,14 @@
                         "description": "Fetch payments."
                     },
                     {
-                        "label": "Fetch payment by ID",
+                        "label": "Fetch payment details by ID",
                         "value": "payment.fetchPaymentByPaymentId",
-                        "description": "Fetch payment details with the help of payment ID."
+                        "description": "Fetch payment details using the payment ID."
                     },
                     {
-                        "label": "Fetch card details of payment",
+                        "label": "Fetch card details for a payment",
                         "value": "payment.fetchCardDetailsOfPayment",
-                        "description": "Fetch card details of the payment."
+                        "description": "Fetch card details for a payment."
                     }
                 ],
                 "validation": {
@@ -56,10 +56,10 @@
             {
                 "name": "skip",
                 "meta": {
-                    "displayName": "Number of payments to be skip",
+                    "displayName": "Number of payments to skip",
                     "displayType": "text",
-                    "placeholder": "Enter the number of payments to be skip",
-                    "description": "Enter the number of payments you don't want to fetch.",
+                    "placeholder": "Enter the number of payments to skip",
+                    "description": "Enter the number of payments to skip.",
                     "validation": {
                         "required": true
                     }
@@ -87,10 +87,10 @@
             {
                 "name": "paymentId",
                 "meta": {
-                    "displayName": "Payments ID",
+                    "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter the payments ID",
-                    "description": "Enter the payments ID for which you want to fetch payment details.",
+                    "placeholder": "Enter a payment ID",
+                    "description": "Enter the payment ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }
@@ -118,10 +118,10 @@
             {
                 "name": "paymentId",
                 "meta": {
-                    "displayName": "Payments ID",
+                    "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter the payments ID",
-                    "description": "Enter the payments ID for which you want to fetch card details.",
+                    "placeholder": "Enter a payment ID",
+                    "description": "Enter the payment ID you want to fetch card details for.",
                     "validation": {
                         "required": true
                     }

@@ -16,7 +16,7 @@
                     {
                         "label": "Fetch refund details by ID",
                         "value": "refund.fetchRefundByRefundId",
-                        "description": "Fetch refund details with the help of refund ID."
+                        "description": "Fetch refund details using the refund ID."
                     }
                 ],
                 "validation": {
@@ -59,8 +59,8 @@
                 "meta": {
                     "displayName": "Refund ID",
                     "displayType": "text",
-                    "placeholder": "Enter the refund ID",
-                    "description": "Enter the refund ID for which you want to fetch refund details.",
+                    "placeholder": "Enter a refund ID",
+                    "description": "Enter the refund ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }

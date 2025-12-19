@@ -16,7 +16,7 @@
                     {
                         "label": "Fetch settlement details by ID",
                         "value": "settlement.fetchSettlementBySettlementId",
-                        "description": "Fetch settlement details with the help of settlement ID."
+                        "description": "Fetch settlement details using the settlement ID."
                     }
                 ],
                 "validation": {
@@ -59,8 +59,8 @@
                 "meta": {
                     "displayName": "Settlement ID",
                     "displayType": "text",
-                    "placeholder": "Enter the settlement ID",
-                    "description": "Enter the settlement ID for which you want to fetch settlement details.",
+                    "placeholder": "Enter a settlement ID",
+                    "description": "Enter the settlement ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }

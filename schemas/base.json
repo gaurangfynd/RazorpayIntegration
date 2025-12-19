@@ -5,8 +5,8 @@
             "meta": {
                 "displayName": "Razorpay Account",
                 "displayType": "autocomplete",
-                "placeholder": "Select Razorpay Account",
-                "description": "Razorpay is a secure partner with Boltic. Your credentials are encrypted & can be removed at any time.",
+                "placeholder": "Select a Razorpay account",
+                "description": "Razorpay is a secure partner with Boltic. Your credentials are encrypted and can be removed at any time.",
                 "options": [],
                 "config": {
                     "urlType": "secret",
@@ -35,37 +35,37 @@
                     {
                         "label": "Order",
                         "value": "order",
-                        "description": "Order will allow you to create, fetch single/multiple orders."
+                        "description": "Order lets you create and fetch orders (single or multiple)."
                     },
                     {
                         "label": "Payment",
                         "value": "payment",
-                        "description": "Payment will allow you to create, fetch single/multiple payments."
+                        "description": "Payment lets you fetch payments (single or multiple)."
                     },
                     {
                         "label": "Dispute",
                         "value": "dispute",
-                        "description": "Dispute will allow you to retrive all disputes raised by customers."
+                        "description": "Dispute lets you fetch all disputes raised by customers."
                     },
                     {
                         "label": "Refund",
                         "value": "refund",
-                        "description": "Refund will allow you to retrive all refund details."
+                        "description": "Refund lets you fetch refund details."
                     },
                     {
                         "label": "Settlement",
                         "value": "settlement",
-                        "description": "Settlement will allow you to retrive all settlement details."
+                        "description": "Settlement lets you fetch settlement details."
                     },
                     {
                         "label": "Invoice",
                         "value": "invoice",
-                        "description": "Invoice will allow you to retrive all invoice details."
+                        "description": "Invoice lets you fetch invoice details."
                     },
                          {
                         "label": "Payment Link",
                         "value": "paymentLink",
-                        "description": "Payment Link will allow you to create, retrive single/multiple payment link details."
+                        "description": "Payment Link lets you create and fetch payment link details (single or multiple)."
                     }
                 ],
                 "value": "",

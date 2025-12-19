@@ -11,17 +11,17 @@
                     {
                         "label": "Create payment link",
                         "value": "paymentLink.createPaymentLink",
-                        "description": "Create a payment link using basic details such as amount, expiry date etc."
+                        "description": "Create a payment link using basic details such as amount and expiry date."
                     },
                     {
                         "label": "Fetch all payment links",
                         "value": "paymentLink.fetchPaymentLinks",
-                        "description": "Fetch details of all the Standard Payment Links."
+                        "description": "Fetch details of all standard payment links."
                     },
                     {
                         "label": "Fetch payment link details by ID",
                         "value": "paymentLink.fetchPaymentLinkById",
-                        "description": "Fetch payment link details with the help of payment link ID."
+                        "description": "Fetch payment link details using the payment link ID."
                     }
                 ],
                 "validation": {
@@ -80,7 +80,7 @@
                     "validation": {
                         "required": true,
                         "requiredDetail": {
-                            "errorMsg": "Country is a required field"
+                            "errorMsg": "Currency is a required field"
                         }
                     },
                     "options": [
@@ -605,7 +605,7 @@
                     "displayName": "Amount",
                     "displayType": "number",
                     "placeholder": "Enter the amount",
-                    "description": "Enter the amout.",
+                    "description": "Enter the amount.",
                     "validation": {
                         "required": true
                     },
@@ -729,7 +729,7 @@
                     "displayName": "Notes",
                     "displayType": "keyvalue",
                     "placeholder": "Enter notes",
-                    "description": "Enter the notes, ex:- note_key: Payment Link for Groceries.",
+                    "description": "Enter notes (for example: note_key: Payment Link for Groceries).",
                     "validation": {
                         "max": 15
                     },
@@ -802,10 +802,10 @@
             {
                 "name": "callback_url",
                 "meta": {
-                    "displayName": "Callback url",
+                    "displayName": "Callback URL",
                     "displayType": "url",
                     "placeholder": "https://example.com",
-                    "description": "Enter the callback url.",
+                    "description": "Enter the callback URL.",
                     "validation": {}
                 }
             },
@@ -814,7 +814,7 @@
                 "meta": {
                     "displayName": "Callback method",
                     "displayType": "radio",
-                    "description": "Select callback method of callback url",
+                    "description": "Select the callback method for the callback URL.",
                     "value": "",
                     "options": [
                         {
@@ -866,8 +866,8 @@
                 "meta": {
                     "displayName": "Payment link ID",
                     "displayType": "text",
-                    "placeholder": "Enter the payment link ID",
-                    "description": "Enter the payment link ID for which you want to fetch payment link details.",
+                    "placeholder": "Enter a payment link ID",
+                    "description": "Enter the payment link ID you want to fetch details for.",
                     "validation": {
                         "required": true
                     }
