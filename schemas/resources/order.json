@@ -49,7 +49,7 @@
             "method": "POST",
             "url": "https://api.razorpay.com/v1/orders",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "body": {
@@ -698,7 +698,7 @@
             },
             "url": "https://api.razorpay.com/v1/orders",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
@@ -729,7 +729,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/orders/{{parameters.orderId}}",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
@@ -760,7 +760,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/orders/{{parameters.orderId}}/payments",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {

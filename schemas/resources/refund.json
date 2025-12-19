@@ -40,7 +40,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/refunds",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
@@ -71,7 +71,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/refunds/{{parameters.refundId}}",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {

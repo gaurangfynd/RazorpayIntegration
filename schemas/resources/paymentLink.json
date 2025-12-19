@@ -44,30 +44,17 @@
             "method": "POST",
             "url": "https://api.razorpay.com/v1/payment_links",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "body": {
                 "amount": "{{parameters.amount}}",
-                "currency": "{{parameters.currency}}",
-                "reference_id": "{{parameters.reference_id}}",
-                "description": "{{parameters.description}}",
-                "notes": "{{parameters.notes}}",
-                "callback_url": "{{parameters.callback_url}}",
-                "callback_method": "{{parameters.callback_url ? parameters.callback_method : null}}",
-                "customer": "{{parameters.customer}}",
-                "reminder_enable": "{{parameters.reminder_enable}}",
-                "notify": {
-                    "sms": "{{parameters.notify_sms}}",
-                    "email": "{{parameters.notify_email}}"
-                },
-                "accept_partial": "{{parameters.accept_partial}}",
-                "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
+                "currency": "{{parameters.currency}}"
             },
             "response": {
                 "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response}}",
+                    "message": "{{response.data.errors.message}}",
                     "code": "{{response.data.errors.code}}"
                 }
             }
@@ -76,7 +63,7 @@
             {
                 "name": "currency",
                 "meta": {
-                    "displayName": "currency",
+                    "displayName": "Currency",
                     "displayType": "select",
                     "placeholder": "Select the currency",
                     "description": "Select the currency.",
@@ -859,7 +846,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payment_links/",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
@@ -890,7 +877,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payment_links/{{parameters.paymentLinkId}}",
             "headers": {
-                "ContentType": "application/json",
+                "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
