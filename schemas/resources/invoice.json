@@ -19,9 +19,9 @@
                         "description": "Fetch invoice details using the invoice ID."
                     },
                     {
-                        "label": "Fetch all invoices of a subscription",
+                        "label": "Fetch all invoices for a subscription",
                         "value": "invoice.fetchInvoicesBySubscriptionId",
-                        "description": "Fetch details of all invoices using the subscription ID."
+                        "description": "Fetch all invoices for a subscription using the subscription ID."
                     }
                 ],
                 "validation": {
@@ -95,8 +95,8 @@
                 "meta": {
                     "displayName": "Subscription ID",
                     "displayType": "text",
-                    "placeholder": "Enter an subscription ID",
-                    "description": "Enter the subscription ID for which you want to fetch details of all invoices.",
+                    "placeholder": "Enter a subscription ID",
+                    "description": "Enter the subscription ID you want to fetch invoice details for.",
                     "validation": {
                         "required": true
                     }
