@@ -78,10 +78,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -109,10 +109,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -140,10 +140,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }

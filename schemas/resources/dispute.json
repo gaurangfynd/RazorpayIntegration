@@ -44,11 +44,11 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-            "response": {
-                "output": "{{response.data}}",
+             "response": {
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -75,11 +75,11 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-            "response": {
-                "output": "{{response.data}}",
+               "response": {
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }

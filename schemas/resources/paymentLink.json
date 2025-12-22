@@ -55,7 +55,11 @@
                 "notes": "{{parameters.notes}}",
                 "callback_url": "{{parameters.callback_url}}",
                 "callback_method": "{{parameters.callback_url ? parameters.callback_method : null}}",
-                "customer": "{{parameters.customer}}",
+                "customer": {
+                    "name": "{{parameters.name}}",
+                    "email": "{{parameters.email}}",
+                    "contact": "{{parameters.contact}}"
+                },
                 "reminder_enable": "{{parameters.reminder_enable}}",
                 "notify": {
                     "sms": "{{parameters.notify_sms}}",
@@ -65,10 +69,10 @@
                 "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         },
@@ -686,53 +690,42 @@
                 }
             },
             {
-                "name": "customer",
+                "name": "name",
                 "meta": {
-                    "displayType": "object",
-                    "displayName": "Customer details",
-                    "description": "Enter customer details",
+                    "displayName": "Customer name",
+                    "displayType": "text",
+                    "placeholder": "Enter customer's name",
+                    "description": "Enter customer's name.",
+                    "validation": {
+                        "required": false
+                    }
+                }
+            },
+            {
+                "name": "email",
+                "meta": {
+                    "displayName": "Customer email",
+                    "displayType": "email",
+                    "placeholder": "Enter customer's email",
+                    "description": "Enter customer's email.",
+                    "validation": {
+                        "required": false
+                    }
+                }
+            },
+            {
+                "name": "contact",
+                "meta": {
+                    "displayName": "Enter customer's phone number",
+                    "description": "Enter customer's phone number.",
+                    "displayType": "text",
+                    "placeholder": "+91 1231231231",
+                    "validation": {
+                        "required": false
+                    },
                     "readOnly": false,
-                    "children": [
-                        {
-                            "name": "name",
-                            "meta": {
-                                "displayName": "Customer name",
-                                "displayType": "text",
-                                "placeholder": "Enter customer's name",
-                                "description": "Enter customer's name.",
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        },
-                        {
-                            "name": "email",
-                            "meta": {
-                                "displayName": "Customer email",
-                                "displayType": "email",
-                                "placeholder": "Enter customer's email",
-                                "description": "Enter customer's email.",
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        },
-                        {
-                            "name": "contact",
-                            "meta": {
-                                "displayName": "Enter customer's phone number",
-                                "description": "Enter customer's phone number.",
-                                "displayType": "text",
-                                "placeholder": "+91 1231231231",
-                                "validation": {
-                                    "required": false
-                                },
-                                "readOnly": false,
-                                "htmlProps": {},
-                                "value": ""
-                            }
-                        }
-                    ]
+                    "htmlProps": {},
+                    "value": ""
                 }
             },
             {
@@ -863,10 +856,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -894,10 +887,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }

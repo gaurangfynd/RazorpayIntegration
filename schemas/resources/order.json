@@ -59,10 +59,10 @@
                 "notes": "{{parameters.notes}}"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         },
@@ -667,7 +667,7 @@
                     "placeholder": "Enter the number of orders",
                     "description": "Enter the number of orders you want to fetch.",
                     "validation": {
-                        "required": true
+                        "required": false
                     },
                     "htmlProps": {
                         "allowDynamic": true
@@ -682,7 +682,7 @@
                     "placeholder": "Enter the number of orders to skip",
                     "description": "Enter the number of orders to skip.",
                     "validation": {
-                        "required": true
+                        "required": false
                     },
                     "htmlProps": {
                         "allowDynamic": true
@@ -702,10 +702,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -733,10 +733,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
@@ -764,10 +764,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response.data.errors.message}}",
-                    "code": "{{response.data.errors.code}}"
+                    "message": "{{response?.data?.error?.description}}",
+                    "code": "{{response?.data?.error?.code}}"
                 }
             }
         }
