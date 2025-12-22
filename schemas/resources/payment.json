@@ -45,11 +45,14 @@
                 "name": "count",
                 "meta": {
                     "displayName": "Number of payments",
-                    "displayType": "text",
+                    "displayType": "number",
                     "placeholder": "Enter the number of payments",
-                    "description": "Enter the number of payments you want to fetch.",
+                    "description": "Enter the number of payments you want to fetch. Default value is 10, Maximum value is 100.",
                     "validation": {
-                        "required": true
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
                     }
                 }
             },
@@ -57,11 +60,14 @@
                 "name": "skip",
                 "meta": {
                     "displayName": "Number of payments to skip",
-                    "displayType": "text",
+                    "displayType": "number",
                     "placeholder": "Enter the number of payments to skip",
-                    "description": "Enter the number of payments to skip.",
+                    "description": "Enter the number of records to be skipped while fetching the payments.",
                     "validation": {
-                        "required": true
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
                     }
                 }
             }
@@ -78,10 +84,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }
@@ -109,10 +115,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }
@@ -140,10 +146,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }

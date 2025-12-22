@@ -46,8 +46,8 @@
             "response": {
                 "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }
@@ -77,8 +77,8 @@
             "response": {
                 "output": "{{response?.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.message}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }

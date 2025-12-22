@@ -69,10 +69,10 @@
                 "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         },
@@ -856,10 +856,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }
@@ -887,10 +887,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
-                    "message": "{{response?.data?.error?.description}}",
-                    "code": "{{response?.data?.error?.code}}"
+                    "message": "{{response.data.message}}",
+                    "code": "{{response.data.error.code}}"
                 }
             }
         }
