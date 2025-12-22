@@ -49,7 +49,20 @@
             },
             "body": {
                 "amount": "{{parameters.amount}}",
-                "currency": "{{parameters.currency}}"
+                "currency": "{{parameters.currency}}",
+                "reference_id": "{{parameters.reference_id}}",
+                "description": "{{parameters.description}}",
+                "notes": "{{parameters.notes}}",
+                "callback_url": "{{parameters.callback_url}}",
+                "callback_method": "{{parameters.callback_url ? parameters.callback_method : null}}",
+                "customer": "{{parameters.customer}}",
+                "reminder_enable": "{{parameters.reminder_enable}}",
+                "notify": {
+                    "sms": "{{parameters.notify_sms}}",
+                    "email": "{{parameters.notify_email}}"
+                },
+                "accept_partial": "{{parameters.accept_partial}}",
+                "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
             },
             "response": {
                 "output": "{{response.data}}",
