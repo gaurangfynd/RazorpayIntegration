@@ -87,7 +87,7 @@
                 "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
-                    "code": "{{response.data.error.code}}"
+                    "code": "{{response.status}}"
                 }
             }
         }
@@ -118,7 +118,7 @@
                 "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
-                    "code": "{{response.data.error.code}}"
+                    "code": "{{response.status}}"
                 }
             }
         }
@@ -149,7 +149,7 @@
                 "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
-                    "code": "{{response.data.error.code}}"
+                    "code": "{{response.status}}"
                 }
             }
         }

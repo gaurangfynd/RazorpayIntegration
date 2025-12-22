@@ -44,10 +44,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
-                    "code": "{{response.data.error.code}}"
+                    "code": "{{response.status}}"
                 }
             }
         }
@@ -75,10 +75,10 @@
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.message}}",
-                    "code": "{{response.data.error.code}}"
+                    "code": "{{response.status}}"
                 }
             }
         }
