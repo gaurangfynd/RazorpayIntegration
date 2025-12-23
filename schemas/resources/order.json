@@ -70,7 +70,7 @@
             {
                 "name": "currency",
                 "meta": {
-                    "displayName": "currency",
+                    "displayName": "Currency",
                     "displayType": "select",
                     "placeholder": "Enter the currency",
                     "description": "Enter the currency.",

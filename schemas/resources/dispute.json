@@ -36,15 +36,49 @@
     ],
     "fetchDisputes": {
         "parameters": [
+            {
+                "name": "count",
+                "meta": {
+                    "displayName": "Number of disputes",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of disputes",
+                    "description": "Enter the number of disputes you want to fetch. Default value is 10, maximum value is 100.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            },
+            {
+                "name": "skip",
+                "meta": {
+                    "displayName": "Number of disputes to skip",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of disputes to skip",
+                    "description": "Enter the number of disputes to be skipped, default value is 0.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            }
         ],
         "definition": {
             "method": "GET",
+            "qs": {
+                "count": "{{parameters.count}}",
+                "skip": "{{parameters.skip}}"
+            },
             "url": "https://api.razorpay.com/v1/disputes",
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-             "response": {
+            "response": {
                 "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
@@ -75,7 +109,7 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-               "response": {
+            "response": {
                 "output": "{{response.data}}",
                 "error": {
                     "message": "{{response.data.message}}",

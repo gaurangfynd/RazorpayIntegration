@@ -35,9 +35,44 @@
         }
     ],
     "fetchRefunds": {
-        "parameters": [],
+        "parameters": [
+             {
+                "name": "count",
+                "meta": {
+                    "displayName": "Number of refunds",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of refunds",
+                    "description": "Enter the number of refunds you want to fetch. Default value is 10, maximum value is 100.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            },
+            {
+                "name": "skip",
+                "meta": {
+                    "displayName": "Number of refunds to skip",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of refunds to skip",
+                    "description": "Enter the number of refunds to be skipped, default value is 0.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            }
+        ],
         "definition": {
             "method": "GET",
+              "qs": {
+                "count": "{{parameters.count}}",
+                "skip": "{{parameters.skip}}"
+            },
             "url": "https://api.razorpay.com/v1/refunds",
             "headers": {
                 "Content-Type": "application/json",

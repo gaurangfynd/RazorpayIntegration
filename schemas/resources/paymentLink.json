@@ -847,9 +847,44 @@
         ]
     },
     "fetchPaymentLinks": {
-        "parameters": [],
+        "parameters": [
+             {
+                "name": "count",
+                "meta": {
+                    "displayName": "Number of payment links to be fetched",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of payment links",
+                    "description": "Enter the number of payment links you want to fetch. Default value is 10, maximum value is 100.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            },
+            {
+                "name": "skip",
+                "meta": {
+                    "displayName": "Number of payment links to skip",
+                    "displayType": "number",
+                    "placeholder": "Enter the number of payment links to skip",
+                    "description": "Enter the number of payment links to be skipped, default value is 0.",
+                    "validation": {
+                        "required": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            }
+        ],
         "definition": {
             "method": "GET",
+              "qs": {
+                "count": "{{parameters.count}}",
+                "skip": "{{parameters.skip}}"
+            },
             "url": "https://api.razorpay.com/v1/payment_links/",
             "headers": {
                 "Content-Type": "application/json",
