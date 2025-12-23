@@ -72,8 +72,8 @@
                 "meta": {
                     "displayName": "Currency",
                     "displayType": "select",
-                    "placeholder": "Enter the currency",
-                    "description": "Enter the currency.",
+                    "placeholder": "Select a currency",
+                    "description": "Three-letter ISO currency code (for example: INR).",
                     "validation": {
                         "required": true,
                         "requiredDetail": {
@@ -604,8 +604,8 @@
                 "meta": {
                     "displayName": "Amount",
                     "displayType": "number",
-                    "placeholder": "Enter the amount",
-                    "description": "Enter the amount.",
+                    "placeholder": "Enter amount (in smallest unit)",
+                    "description": "Amount in the smallest unit of the currency (for example, 100 = ₹1).",
                     "validation": {
                         "required": true
                     }
@@ -614,10 +614,10 @@
             {
                 "name": "receipt",
                 "meta": {
-                    "displayName": "Receipt Number",
+                    "displayName": "Receipt",
                     "displayType": "text",
-                    "placeholder": "Enter the receipt number",
-                    "description": "Enter the receipt number.",
+                    "placeholder": "Enter receipt reference (for example: rcpt_0001)",
+                    "description": "Receipt ID for internal reference for the order (max: 40 characters).",
                     "validation": {
                         "required": true,
                         "max": 40
@@ -630,7 +630,7 @@
                     "displayName": "Notes",
                     "displayType": "keyvalue",
                     "placeholder": "Enter notes",
-                    "description": "Enter notes (for example: note_key: Payment Link for Groceries).",
+                    "description": "Optional key-value notes for the order (up to 15 entries).",
                     "validation": {
                         "max": 15
                     },
@@ -676,10 +676,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a minimal creation date from when orders are to be fetched.",
+                    "description": "Filter orders created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Enter the minimal creation date"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -697,10 +697,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a maximal creation date till when orders are to be fetched.",
+                    "description": "Filter orders created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Enter the maximal creation date"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -709,8 +709,8 @@
                 "meta": {
                     "displayName": "Number of orders",
                     "displayType": "number",
-                    "placeholder": "Enter the number of orders",
-                    "description": "Enter the number of orders you want to fetch. Default value is 10, maximum value is 100.",
+                    "placeholder": "Enter count (1–100)",
+                    "description": "Number of orders to fetch (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -724,8 +724,8 @@
                 "meta": {
                     "displayName": "Number of orders to skip",
                     "displayType": "number",
-                    "placeholder": "Enter the number of orders to skip",
-                    "description": "Enter the number of orders to be skipped, default value is 0.",
+                    "placeholder": "Enter offset (skip)",
+                    "description": "Number of orders to skip (offset for pagination; default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -737,9 +737,9 @@
             {
                 "name": "receipt",
                 "meta": {
-                    "displayName": "Receipt ID",
+                    "displayName": "Receipt",
                     "displayType": "text",
-                    "placeholder": "Enter a receipt ID",
+                    "placeholder": "Enter a receipt value (for example: rcpt_0001)",
                     "description": "Filter orders by receipt (the receipt value set while creating the order).",
                     "validation": {
                         "required": false
@@ -780,8 +780,8 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter the order ID",
-                    "description": "Enter the order ID you want to fetch details for.",
+                    "placeholder": "Enter an order ID (for example: order_00000000000001)",
+                    "description": "Fetch an order by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -811,8 +811,8 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter the order ID",
-                    "description": "Enter the order ID you want to fetch associated payment details for.",
+                    "placeholder": "Enter an order ID (for example: order_00000000000001)",
+                    "description": "Fetch payments associated with an order using the order ID.",
                     "validation": {
                         "required": true
                     }

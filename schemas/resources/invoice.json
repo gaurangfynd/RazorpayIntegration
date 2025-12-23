@@ -55,10 +55,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a minimal creation date from when invoices are to be fetched.",
+                    "description": "Filter invoices created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Enter the minimal creation date"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -76,10 +76,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a maximal creation date till when invoices are to be fetched.",
+                    "description": "Filter invoices created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Enter the maximal creation date"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -88,8 +88,8 @@
                 "meta": {
                     "displayName": "Number of invoices",
                     "displayType": "number",
-                    "placeholder": "Enter the number of invoices",
-                    "description": "Enter the number of invoices you want to fetch. Default value is 10, maximum value is 100.",
+                    "placeholder": "Enter count (1–100)",
+                    "description": "Number of invoices to fetch (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -103,8 +103,8 @@
                 "meta": {
                     "displayName": "Number of invoices to skip",
                     "displayType": "number",
-                    "placeholder": "Enter the number of invoices to skip",
-                    "description": "Enter the number of invoices to be skipped, default value is 0.",
+                    "placeholder": "Enter offset (skip)",
+                    "description": "Number of invoices to skip (offset for pagination; default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -118,8 +118,8 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter the payment ID",
-                    "description": "The unique identifier of the payment made by the customer against the invoice.",
+                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "description": "Filter invoices by the payment ID associated with the invoice.",
                     "validation": {
                         "required": false
                     },
@@ -131,8 +131,8 @@
                 "meta": {
                     "displayName": "Receipt ID",
                     "displayType": "text",
-                    "placeholder": "Enter the receipt ID",
-                    "description": "The unique receipt number that you entered for internal purpose.",
+                    "placeholder": "Enter a receipt ID (for example: rcpt_0001)",
+                    "description": "Filter invoices by receipt ID (the value set while creating the invoice).",
                     "validation": {
                         "required": false
                     },
@@ -144,8 +144,8 @@
                 "meta": {
                     "displayName": "Customer ID",
                     "displayType": "text",
-                    "placeholder": "Enter the customer ID",
-                    "description": "The unique identifier of the customer fetches all invoices generated for a customer.",
+                    "placeholder": "Enter a customer ID (for example: cust_00000000000001)",
+                    "description": "Filter invoices by customer ID.",
                     "validation": {
                         "required": false
                     },
@@ -188,8 +188,8 @@
                 "meta": {
                     "displayName": "Invoice ID",
                     "displayType": "text",
-                    "placeholder": "Enter an invoice ID",
-                    "description": "Enter the invoice ID you want to fetch details for.",
+                    "placeholder": "Enter an invoice ID (for example: inv_00000000000001)",
+                    "description": "Fetch an invoice by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -219,8 +219,8 @@
                 "meta": {
                     "displayName": "Subscription ID",
                     "displayType": "text",
-                    "placeholder": "Enter a subscription ID",
-                    "description": "Enter the subscription ID you want to fetch invoice details for.",
+                    "placeholder": "Enter a subscription ID (for example: sub_00000000000001)",
+                    "description": "Fetch invoices for a subscription using the subscription ID.",
                     "validation": {
                         "required": true
                     }

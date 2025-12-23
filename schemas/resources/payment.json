@@ -55,10 +55,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a minimal creation date from when payments are to be fetched.",
+                    "description": "Filter payments created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Enter the minimal creation date"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -76,10 +76,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a maximal creation date till when payments are to be fetched.",
+                    "description": "Filter payments created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Enter the maximal creation date"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -88,8 +88,8 @@
                 "meta": {
                     "displayName": "Number of payments",
                     "displayType": "number",
-                    "placeholder": "Enter the number of payments",
-                    "description": "Enter the number of payments you want to fetch. Default value is 10, Maximum value is 100.",
+                    "placeholder": "Enter count (1–100)",
+                    "description": "Number of payments to fetch (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -103,8 +103,8 @@
                 "meta": {
                     "displayName": "Number of payments to skip",
                     "displayType": "number",
-                    "placeholder": "Enter the number of payments to skip",
-                    "description": "Enter the number of records to be skipped while fetching the payments.",
+                    "placeholder": "Enter offset (skip)",
+                    "description": "Number of payments to skip (offset for pagination; default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -146,8 +146,8 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter a payment ID",
-                    "description": "Enter the payment ID you want to fetch details for.",
+                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "description": "Fetch a payment by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -177,8 +177,8 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter a payment ID",
-                    "description": "Enter the payment ID you want to fetch card details for.",
+                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "description": "Fetch card details for a payment using the payment ID.",
                     "validation": {
                         "required": true
                     }

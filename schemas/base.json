@@ -35,37 +35,37 @@
                     {
                         "label": "Order",
                         "value": "order",
-                        "description": "Order lets you create and fetch orders (single or multiple)."
+                        "description": "Create orders and fetch order details."
                     },
                     {
                         "label": "Payment Link",
                         "value": "paymentLink",
-                        "description": "Payment Link lets you create and fetch payment link details (single or multiple)."
+                        "description": "Create payment links and fetch payment link details."
                     },
                     {
                         "label": "Payment",
                         "value": "payment",
-                        "description": "Payment lets you fetch payments (single or multiple)."
+                        "description": "Fetch payments and payment card details."
                     },
                     {
                         "label": "Refund",
                         "value": "refund",
-                        "description": "Refund lets you fetch refund details."
+                        "description": "Fetch refunds and refund details."
                     },
                     {
                         "label": "Settlement",
                         "value": "settlement",
-                        "description": "Settlement lets you fetch settlement details."
+                        "description": "Fetch settlements and settlement details."
                     },
                     {
                         "label": "Invoice",
                         "value": "invoice",
-                        "description": "Invoice lets you fetch invoice details."
+                        "description": "Fetch invoices and invoice details."
                     },
                     {
                         "label": "Dispute",
                         "value": "dispute",
-                        "description": "Dispute lets you fetch all disputes raised by customers."
+                        "description": "Fetch disputes and dispute details."
                     }
                 ],
                 "value": "",
