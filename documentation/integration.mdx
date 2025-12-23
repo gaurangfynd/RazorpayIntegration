@@ -1,46 +1,65 @@
-# Razorpay Integration
+# Razorpay
 
-## Orders
-1. **Create order** — Create a new order.  
-2. **Fetch all orders** — Fetch orders.  
-3. **Fetch order details by ID** — Fetch order details using the order ID.  
-4. **Fetch all payments related to an order** — Fetch payment details associated with an order.  
+Razorpay is a payments platform that helps businesses accept payments, manage orders, issue refunds, and track settlements. The Razorpay node in Boltic lets you connect to your Razorpay account and automate workflows using common Razorpay resources and operations.
 
----
+## Razorpay Account
 
-## Dispute
-1. **Fetch all disputes** — Fetch all disputes raised by customers.  
-2. **Fetch dispute details by ID** — Fetch dispute details using the dispute ID.  
+- Select the Razorpay account you want to connect.
+- If you don't have an existing account, add one using the **Add New Account** option before proceeding.
+- This integration authenticates using Razorpay API Key credentials (Key ID and Key Secret). See `Authentication.mdx` for details.
 
----
+## Available Resources
 
-## Invoices
-1. **Fetch all invoices** — Fetch details of all invoices.  
-2. **Fetch invoice details by ID** — Fetch invoice details using the invoice ID.  
-3. **Fetch all invoices of a subscription** — Fetch details of all invoices using the subscription ID.  
+Here are the available resources you can use with the **Razorpay** node:
 
----
+### Resources
+- **Order**: Create orders, fetch orders, and fetch payments for an order.
+- **Payment Link**: Create payment links, fetch payment links, and fetch a payment link by ID.
+- **Payment**: Fetch payments, fetch a payment by ID, and fetch card details for a payment.
+- **Refund**: Fetch refunds and fetch a refund by ID.
+- **Settlement**: Fetch settlements and fetch a settlement by ID.
+- **Invoice**: Fetch invoices, fetch an invoice by ID, and fetch invoices for a subscription.
+- **Dispute**: Fetch disputes and fetch a dispute by ID.
 
-## Payments
-1. **Fetch all payments** — Fetch payments.  
-2. **Fetch payment details by ID** — Fetch payment details using the payment ID.  
-3. **Fetch card details for a payment** — Fetch card details for a payment.  
+## Basic Operations
 
----
+Here are the basic operations you can perform with the Razorpay node:
 
-## Payment Link
-1. **Create payment link** — Create a payment link using basic details such as amount and expiry date.  
-2. **Fetch all payment links** — Fetch details of all standard payment links.  
-3. **Fetch payment link details by ID** — Fetch payment link details using the payment link ID.  
+### Order
+- **Create Order**: Create an order to generate an order ID for capturing a payment.
+- **Fetch All Orders**: Fetch a list of orders with optional filters (count, skip, from, to, receipt).
+- **Fetch Order Details by ID**: Fetch order details using the order ID.
+- **Fetch Payments for an Order**: Fetch payments associated with an order using the order ID.
 
----
+### Payment Link
+- **Create Payment Link**: Create a payment link for collecting payments from customers.
+- **Fetch All Payment Links**: Fetch a list of payment links with optional filters (count, skip, from, to).
+- **Fetch Payment Link by ID**: Fetch a payment link by its ID.
 
-## Refunds
-1. **Fetch all refunds** — Fetch details of all refunds.  
-2. **Fetch refund details by ID** — Fetch refund details using the refund ID.  
+### Payment
+- **Fetch All Payments**: Fetch a list of payments with optional filters (count, skip, from, to).
+- **Fetch Payment Details by ID**: Fetch a payment by its ID.
+- **Fetch Card Details for a Payment**: Fetch card details for a payment using the payment ID.
 
----
+### Refund
+- **Fetch All Refunds**: Fetch a list of refunds with optional filters (count, skip, from, to).
+- **Fetch Refund by ID**: Fetch a refund by its ID.
 
-## Settlements
-1. **Fetch all settlements** — Fetch details of all settlements.  
-2. **Fetch settlement details by ID** — Fetch settlement details using the settlement ID.  
+### Settlement
+- **Fetch All Settlements**: Fetch a list of settlements with optional filters (count, skip, from, to).
+- **Fetch Settlement by ID**: Fetch a settlement by its ID.
+
+### Invoice
+- **Fetch All Invoices**: Fetch a list of invoices with optional filters (count, skip, from, to, payment_id, receipt, customer_id).
+- **Fetch Invoice by ID**: Fetch an invoice by its ID.
+- **Fetch Invoices for a Subscription**: Fetch invoices for a subscription using the subscription ID.
+
+### Dispute
+- **Fetch All Disputes**: Fetch a list of disputes with optional filters (count, skip, from, to).
+- **Fetch Dispute by ID**: Fetch a dispute by its ID.
+
+## Conclusion
+
+Razorpay makes it easy to build payment workflows and automate back-office processes—letting you create orders, generate payment links, fetch payments, and track refunds, invoices, disputes, and settlements within Boltic.
+
+If you need further assistance, contact Boltic support at <a href="mailto:support@boltic.io">support@boltic.io</a>.
