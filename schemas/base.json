@@ -65,7 +65,7 @@
                     {
                         "label": "Dispute",
                         "value": "dispute",
-                        "description": "Fetch disputes and fetch a dispute by ID."
+                        "description": "Fetch disputes and fetch a dispute details by ID."
                     }
                 ],
                 "value": "",
