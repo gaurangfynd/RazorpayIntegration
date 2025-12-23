@@ -55,7 +55,7 @@
                             "errorMsg": "Client ID is required"
                         }
                     },
-                    "description": "Razorpay Client ID (Test/Live) used for HTTP Basic authentication.",
+                    "description": "Razorpay Client ID used for Basic authentication.",
                     "displayName": "Client ID",
                     "displayType": "text",
                     "placeholder": "Enter Client ID (for example: rzp_test_...)"
@@ -70,7 +70,7 @@
                             "errorMsg": "Client Secret is required"
                         }
                     },
-                    "description": "Razorpay Client Secret (Test/Live) used for HTTP Basic authentication.",
+                    "description": "Razorpay Client Secret used for Basic authentication.",
                     "displayName": "Client Secret",
                     "displayType": "password",
                     "placeholder": "Enter Client Secret"
