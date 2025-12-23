@@ -104,7 +104,7 @@
                     "displayName": "Number of payments to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of payments to skip (offset for pagination, default: 0).",
+                    "description": "Number of payments to skip (default: 0).",
                     "validation": {
                         "required": false
                     },

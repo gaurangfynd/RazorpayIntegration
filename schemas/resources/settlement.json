@@ -99,7 +99,7 @@
                     "displayName": "Number of settlements to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of settlements to skip (offset for pagination, default: 0).",
+                    "description": "Number of settlements to skip (default: 0).",
                     "validation": {
                         "required": false
                     },

@@ -99,7 +99,7 @@
                     "displayName": "Number of refunds to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of refunds to skip (offset for pagination, default: 0).",
+                    "description": "Number of refunds to skip (default: 0).",
                     "validation": {
                         "required": false
                     },

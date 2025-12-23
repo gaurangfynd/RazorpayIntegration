@@ -725,7 +725,7 @@
                     "displayName": "Number of orders to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of orders to skip (offset for pagination, default: 0).",
+                    "description": "Number of orders to skip (default: 0).",
                     "validation": {
                         "required": false
                     },
