@@ -80,6 +80,9 @@
                             "errorMsg": "Currency is a required field"
                         }
                     },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    },
                     "options": [
                         {
                             "value": "AED",
@@ -660,6 +663,48 @@
     "fetchOrders": {
         "parameters": [
             {
+                "meta": {
+                    "htmlProps": {
+                        "format": "YYYY-MM-DD HH:mm:ss",
+                        "disabled": false,
+                        "timeSteps": {
+                            "hours": 1,
+                            "minutes": 5,
+                            "seconds": 5
+                        }
+                    },
+                    "validation": {
+                        "required": false
+                    },
+                    "description": "Enter a minimal creation date from when orders are to be fetched.",
+                    "displayName": "From",
+                    "displayType": "datetime",
+                    "placeholder": "Enter the minimal creation date"
+                },
+                "name": "from"
+            },
+            {
+                "meta": {
+                    "htmlProps": {
+                        "format": "YYYY-MM-DD HH:mm:ss",
+                        "disabled": false,
+                        "timeSteps": {
+                            "hours": 1,
+                            "minutes": 5,
+                            "seconds": 5
+                        }
+                    },
+                    "validation": {
+                        "required": false
+                    },
+                    "description": "Enter a maximal creation date till when orders are to be fetched.",
+                    "displayName": "To",
+                    "displayType": "datetime",
+                    "placeholder": "Enter the maximal creation date"
+                },
+                "name": "to"
+            },
+            {
                 "name": "count",
                 "meta": {
                     "displayName": "Number of orders",
@@ -688,13 +733,28 @@
                         "allowDynamic": true
                     }
                 }
+            },
+            {
+                "name": "receipt",
+                "meta": {
+                    "displayName": "Receipt ID",
+                    "displayType": "text",
+                    "placeholder": "Enter a receipt ID",
+                    "description": "Filter orders by receipt (the receipt value set while creating the order).",
+                    "validation": {
+                        "required": false
+                    }
+                }
             }
         ],
         "definition": {
             "method": "GET",
             "qs": {
                 "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}"
+                "skip": "{{parameters.skip}}",
+                "from": "{{parameters.from}}",
+                "to": "{{parameters.to}}",
+                "receipt": "{{parameters.receipt}}"
             },
             "url": "https://api.razorpay.com/v1/orders",
             "headers": {
@@ -707,6 +767,9 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
+            },
+            "transform": {
+                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },

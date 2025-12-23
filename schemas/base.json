@@ -38,14 +38,14 @@
                         "description": "Order lets you create and fetch orders (single or multiple)."
                     },
                     {
+                        "label": "Payment Link",
+                        "value": "paymentLink",
+                        "description": "Payment Link lets you create and fetch payment link details (single or multiple)."
+                    },
+                    {
                         "label": "Payment",
                         "value": "payment",
                         "description": "Payment lets you fetch payments (single or multiple)."
-                    },
-                    {
-                        "label": "Dispute",
-                        "value": "dispute",
-                        "description": "Dispute lets you fetch all disputes raised by customers."
                     },
                     {
                         "label": "Refund",
@@ -62,10 +62,10 @@
                         "value": "invoice",
                         "description": "Invoice lets you fetch invoice details."
                     },
-                         {
-                        "label": "Payment Link",
-                        "value": "paymentLink",
-                        "description": "Payment Link lets you create and fetch payment link details (single or multiple)."
+                    {
+                        "label": "Dispute",
+                        "value": "dispute",
+                        "description": "Dispute lets you fetch all disputes raised by customers."
                     }
                 ],
                 "value": "",

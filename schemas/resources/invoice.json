@@ -42,6 +42,48 @@
     "fetchInvoices": {
         "parameters": [
             {
+                "meta": {
+                    "htmlProps": {
+                        "format": "YYYY-MM-DD HH:mm:ss",
+                        "disabled": false,
+                        "timeSteps": {
+                            "hours": 1,
+                            "minutes": 5,
+                            "seconds": 5
+                        }
+                    },
+                    "validation": {
+                        "required": false
+                    },
+                    "description": "Enter a minimal creation date from when invoices are to be fetched.",
+                    "displayName": "From",
+                    "displayType": "datetime",
+                    "placeholder": "Enter the minimal creation date"
+                },
+                "name": "from"
+            },
+            {
+                "meta": {
+                    "htmlProps": {
+                        "format": "YYYY-MM-DD HH:mm:ss",
+                        "disabled": false,
+                        "timeSteps": {
+                            "hours": 1,
+                            "minutes": 5,
+                            "seconds": 5
+                        }
+                    },
+                    "validation": {
+                        "required": false
+                    },
+                    "description": "Enter a maximal creation date till when invoices are to be fetched.",
+                    "displayName": "To",
+                    "displayType": "datetime",
+                    "placeholder": "Enter the maximal creation date"
+                },
+                "name": "to"
+            },
+            {
                 "name": "count",
                 "meta": {
                     "displayName": "Number of invoices",
@@ -103,7 +145,7 @@
                     "displayName": "Customer ID",
                     "displayType": "text",
                     "placeholder": "Enter the customer ID",
-                    "description": "The unique identifier of the customer fetches all invoices generated for a customer",
+                    "description": "The unique identifier of the customer fetches all invoices generated for a customer.",
                     "validation": {
                         "required": false
                     },
@@ -118,7 +160,9 @@
                 "skip": "{{parameters.skip}}",
                 "payment_id": "{{parameters.payment_id}}",
                 "receipt": "{{parameters.receipt_id}}",
-                "customer_id": "{{parameters.customer_id}}"
+                "customer_id": "{{parameters.customer_id}}",
+                "from": "{{parameters.from}}",
+                "to": "{{parameters.to}}"
             },
             "url": "https://api.razorpay.com/v1/invoices/",
             "headers": {
@@ -131,6 +175,9 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
+            },
+            "transform": {
+                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },
