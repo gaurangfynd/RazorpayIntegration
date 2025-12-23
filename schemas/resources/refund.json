@@ -99,7 +99,7 @@
                     "displayName": "Number of refunds to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of refunds to skip (offset for pagination; default: 0).",
+                    "description": "Number of refunds to skip (offset for pagination, default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -141,7 +141,7 @@
                 "meta": {
                     "displayName": "Refund ID",
                     "displayType": "text",
-                    "placeholder": "Enter a refund ID (for example: rfnd_00000000000001)",
+                    "placeholder": "Enter a refund ID (for example: rfnd_00001)",
                     "description": "Fetch a refund by its ID.",
                     "validation": {
                         "required": true

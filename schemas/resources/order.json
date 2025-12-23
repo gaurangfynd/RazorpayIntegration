@@ -725,7 +725,7 @@
                     "displayName": "Number of orders to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of orders to skip (offset for pagination; default: 0).",
+                    "description": "Number of orders to skip (offset for pagination, default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -780,7 +780,7 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter an order ID (for example: order_00000000000001)",
+                    "placeholder": "Enter an order ID (for example: order_00001)",
                     "description": "Fetch an order by its ID.",
                     "validation": {
                         "required": true
@@ -811,7 +811,7 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter an order ID (for example: order_00000000000001)",
+                    "placeholder": "Enter an order ID (for example: order_00001)",
                     "description": "Fetch payments associated with an order using the order ID.",
                     "validation": {
                         "required": true

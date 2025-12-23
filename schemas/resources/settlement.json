@@ -99,7 +99,7 @@
                     "displayName": "Number of settlements to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of settlements to skip (offset for pagination; default: 0).",
+                    "description": "Number of settlements to skip (offset for pagination, default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -141,7 +141,7 @@
                 "meta": {
                     "displayName": "Settlement ID",
                     "displayType": "text",
-                    "placeholder": "Enter a settlement ID (for example: setl_00000000000001)",
+                    "placeholder": "Enter a settlement ID (for example: setl_00001)",
                     "description": "Fetch a settlement by its ID.",
                     "validation": {
                         "required": true

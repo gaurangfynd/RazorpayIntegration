@@ -104,7 +104,7 @@
                     "displayName": "Number of invoices to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of invoices to skip (offset for pagination; default: 0).",
+                    "description": "Number of invoices to skip (offset for pagination, default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -118,7 +118,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Filter invoices by the payment ID associated with the invoice.",
                     "validation": {
                         "required": false
@@ -131,7 +131,7 @@
                 "meta": {
                     "displayName": "Receipt ID",
                     "displayType": "text",
-                    "placeholder": "Enter a receipt ID (for example: rcpt_0001)",
+                    "placeholder": "Enter a receipt ID (for example: rcpt_00001)",
                     "description": "Filter invoices by receipt ID (the value set while creating the invoice).",
                     "validation": {
                         "required": false
@@ -144,7 +144,7 @@
                 "meta": {
                     "displayName": "Customer ID",
                     "displayType": "text",
-                    "placeholder": "Enter a customer ID (for example: cust_00000000000001)",
+                    "placeholder": "Enter a customer ID (for example: cust_00001)",
                     "description": "Filter invoices by customer ID.",
                     "validation": {
                         "required": false
@@ -188,7 +188,7 @@
                 "meta": {
                     "displayName": "Invoice ID",
                     "displayType": "text",
-                    "placeholder": "Enter an invoice ID (for example: inv_00000000000001)",
+                    "placeholder": "Enter an invoice ID (for example: inv_00001)",
                     "description": "Fetch an invoice by its ID.",
                     "validation": {
                         "required": true
@@ -219,7 +219,7 @@
                 "meta": {
                     "displayName": "Subscription ID",
                     "displayType": "text",
-                    "placeholder": "Enter a subscription ID (for example: sub_00000000000001)",
+                    "placeholder": "Enter a subscription ID (for example: sub_00001)",
                     "description": "Fetch invoices for a subscription using the subscription ID.",
                     "validation": {
                         "required": true

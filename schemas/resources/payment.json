@@ -104,7 +104,7 @@
                     "displayName": "Number of payments to skip",
                     "displayType": "number",
                     "placeholder": "Enter offset (skip)",
-                    "description": "Number of payments to skip (offset for pagination; default: 0).",
+                    "description": "Number of payments to skip (offset for pagination, default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -146,7 +146,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Fetch a payment by its ID.",
                     "validation": {
                         "required": true
@@ -177,7 +177,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter a payment ID (for example: pay_00000000000001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Fetch card details for a payment using the payment ID.",
                     "validation": {
                         "required": true
