@@ -5,7 +5,7 @@
                 "value": "access_token",
                 "options": [
                     {
-                        "label": "Access Token",
+                        "label": "API Key (Basic Auth)",
                         "value": "access_token"
                     }
                 ],
@@ -32,7 +32,7 @@
             }
         },
         "validate": {
-            "url": "https://api.razorpay.com/v1/orders?count=2",
+            "url": "https://api.razorpay.com/v1/orders",
             "method": "GET",
             "headers": {
                 "Content-Type": "application/json",
@@ -55,10 +55,10 @@
                             "errorMsg": "Client ID is required"
                         }
                     },
-                    "description": "Your Razorpay application Client ID",
+                    "description": "Razorpay Client ID (Test/Live) used for HTTP Basic authentication.",
                     "displayName": "Client ID",
                     "displayType": "text",
-                    "placeholder": "Enter Client ID"
+                    "placeholder": "Enter Client ID (for example: rzp_test_...)"
                 },
                 "name": "client_id"
             },
@@ -67,13 +67,13 @@
                     "validation": {
                         "required": true,
                         "requiredDetail": {
-                            "errorMsg": "Consumer secret is required"
+                            "errorMsg": "Client Secret is required"
                         }
                     },
-                    "description": "Your Razorpay application consumer secret",
-                    "displayName": "Consumer secret",
+                    "description": "Razorpay Client Secret (Test/Live) used for HTTP Basic authentication.",
+                    "displayName": "Client Secret",
                     "displayType": "password",
-                    "placeholder": "Enter Consumer secret"
+                    "placeholder": "Enter Client Secret"
                 },
                 "name": "client_secret"
             }

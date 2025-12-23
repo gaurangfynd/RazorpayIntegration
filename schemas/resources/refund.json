@@ -9,12 +9,12 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch all refunds",
+                        "label": "Fetch All Refunds",
                         "value": "refund.fetchRefunds",
                         "description": "Fetch details of all refunds."
                     },
                     {
-                        "label": "Fetch refund details by ID",
+                        "label": "Fetch Refund Details By ID",
                         "value": "refund.fetchRefundByRefundId",
                         "description": "Fetch refund details using the refund ID."
                     }

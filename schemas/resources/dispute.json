@@ -9,12 +9,12 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch all disputes",
+                        "label": "Fetch All Disputes",
                         "value": "dispute.fetchDisputes",
                         "description": "Fetch all disputes raised by customers."
                     },
                     {
-                        "label": "Fetch dispute details by ID",
+                        "label": "Fetch Dispute Details By ID",
                         "value": "dispute.fetchDisputeByDisputeId",
                         "description": "Fetch dispute details using the dispute ID."
                     }

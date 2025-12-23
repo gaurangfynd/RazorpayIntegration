@@ -9,17 +9,17 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch all invoices",
+                        "label": "Fetch All Invoices",
                         "value": "invoice.fetchInvoices",
                         "description": "Fetch details of all invoices."
                     },
                     {
-                        "label": "Fetch invoice details by ID",
+                        "label": "Fetch Invoice Details By ID",
                         "value": "invoice.fetchInvoiceByInvoiceId",
                         "description": "Fetch invoice details using the invoice ID."
                     },
                     {
-                        "label": "Fetch all invoices for a subscription",
+                        "label": "Fetch All Invoices For A Subscription",
                         "value": "invoice.fetchInvoicesBySubscriptionId",
                         "description": "Fetch all invoices for a subscription using the subscription ID."
                     }

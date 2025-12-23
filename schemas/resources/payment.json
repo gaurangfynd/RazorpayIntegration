@@ -9,17 +9,17 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch all payments",
+                        "label": "Fetch All Payments",
                         "value": "payment.fetchPayments",
-                        "description": "Fetch payments."
+                        "description": "Fetch a list of payments with optional filters (count, skip, from, to)."
                     },
                     {
-                        "label": "Fetch payment details by ID",
+                        "label": "Fetch Payment Details By ID",
                         "value": "payment.fetchPaymentByPaymentId",
                         "description": "Fetch payment details using the payment ID."
                     },
                     {
-                        "label": "Fetch card details for a payment",
+                        "label": "Fetch Card Details For A Payment",
                         "value": "payment.fetchCardDetailsOfPayment",
                         "description": "Fetch card details for a payment."
                     }

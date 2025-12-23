@@ -9,12 +9,12 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch all settlements",
+                        "label": "Fetch All Settlements",
                         "value": "settlement.fetchSettlements",
                         "description": "Fetch details of all settlements."
                     },
                     {
-                        "label": "Fetch settlement details by ID",
+                        "label": "Fetch Settlement Details By ID",
                         "value": "settlement.fetchSettlementBySettlementId",
                         "description": "Fetch settlement details using the settlement ID."
                     }

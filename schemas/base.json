@@ -6,7 +6,7 @@
                 "displayName": "Razorpay Account",
                 "displayType": "autocomplete",
                 "placeholder": "Select a Razorpay account",
-                "description": "Razorpay is a secure partner with Boltic. Your credentials are encrypted and can be removed at any time.",
+                "description": "Razorpay is an all-in-one financial platform for businesses to accept, process, and disburse payments online, offering features like payment gateways for cards/UPI/wallets.",
                 "options": [],
                 "config": {
                     "urlType": "secret",
@@ -35,37 +35,37 @@
                     {
                         "label": "Order",
                         "value": "order",
-                        "description": "Create orders and fetch order details."
+                        "description": "Create orders, fetch orders, and fetch payments for an order."
                     },
                     {
                         "label": "Payment Link",
                         "value": "paymentLink",
-                        "description": "Create payment links and fetch payment link details."
+                        "description": "Create payment links, fetch payment links, and fetch a payment link by ID."
                     },
                     {
                         "label": "Payment",
                         "value": "payment",
-                        "description": "Fetch payments and payment card details."
+                        "description": "Fetch payments, fetch a payment by ID, and fetch card details for a payment."
                     },
                     {
                         "label": "Refund",
                         "value": "refund",
-                        "description": "Fetch refunds and refund details."
+                        "description": "Fetch refunds and fetch refund details by ID."
                     },
                     {
                         "label": "Settlement",
                         "value": "settlement",
-                        "description": "Fetch settlements and settlement details."
+                        "description": "Fetch settlements and fetch settlement details by ID."
                     },
                     {
                         "label": "Invoice",
                         "value": "invoice",
-                        "description": "Fetch invoices and invoice details."
+                        "description": "Fetch invoices, fetch an invoice by ID, and fetch invoices for a subscription."
                     },
                     {
                         "label": "Dispute",
                         "value": "dispute",
-                        "description": "Fetch disputes and dispute details."
+                        "description": "Fetch disputes and fetch a dispute by ID."
                     }
                 ],
                 "value": "",

@@ -9,24 +9,24 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Create order",
+                        "label": "Create Order",
                         "value": "order.createOrder",
-                        "description": "Create a new order."
+                        "description": "Create an order to generate an order ID for capturing a payment."
                     },
                     {
-                        "label": "Fetch all orders",
+                        "label": "Fetch All Orders",
                         "value": "order.fetchOrders",
-                        "description": "Fetch orders."
+                        "description": "Fetch a list of orders with optional filters (count, skip, from, to, receipt)."
                     },
                     {
-                        "label": "Fetch order details by ID",
+                        "label": "Fetch Order Details By ID",
                         "value": "order.fetchOrderByOrderId",
                         "description": "Fetch order details using the order ID."
                     },
                     {
-                        "label": "Fetch all payments related to an order",
+                        "label": "Fetch All Payments Related To An Order",
                         "value": "order.fetchPaymentsByOrderId",
-                        "description": "Fetch payment details associated with an order."
+                        "description": "Fetch payments associated with an order using the order ID."
                     }
                 ],
                 "validation": {
@@ -73,7 +73,7 @@
                     "displayName": "Currency",
                     "displayType": "select",
                     "placeholder": "Select a currency",
-                    "description": "Three-letter ISO currency code (for example: INR).",
+                    "description": "Select the currency, ISO currency code (for example: INR).",
                     "validation": {
                         "required": true,
                         "requiredDetail": {

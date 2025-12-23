@@ -9,17 +9,17 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Create payment link",
+                        "label": "Create Payment Link",
                         "value": "paymentLink.createPaymentLink",
                         "description": "Create a payment link using basic details such as amount and expiry date."
                     },
                     {
-                        "label": "Fetch all payment links",
+                        "label": "Fetch All Payment Links",
                         "value": "paymentLink.fetchPaymentLinks",
                         "description": "Fetch details of all standard payment links."
                     },
                     {
-                        "label": "Fetch payment link details by ID",
+                        "label": "Fetch Payment Link Details By ID",
                         "value": "paymentLink.fetchPaymentLinkById",
                         "description": "Fetch payment link details using the payment link ID."
                     }
@@ -87,7 +87,7 @@
                     "displayName": "Currency",
                     "displayType": "select",
                     "placeholder": "Select a currency",
-                    "description": "Three-letter ISO currency code (for example: INR).",
+                    "description": "Select the currency, ISO currency code (for example: INR).",
                     "validation": {
                         "required": true,
                         "requiredDetail": {
