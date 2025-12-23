@@ -757,6 +757,7 @@
                     },
                     "readOnly": false,
                     "htmlProps": {
+                        "allowDynamic": true,
                         "defaultCountry": "IN"
                     },
                     "value": "+91"
