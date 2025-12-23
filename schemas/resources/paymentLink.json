@@ -77,7 +77,7 @@
                 }
             },
             "transform": {
-                "body": "const data = { ...body }; const expire_by_Raw = \"{{parameters.expire_by}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const expire_by = clean(expire_by_Raw); if (expire_by) { const ts = new Date(expire_by).getTime(); if (!isNaN(ts)) data.expire_by = Math.floor(ts / 1000); } return data;"
+                "body": "const data = { ...body }; const expire_by_Raw = \"{{parameters.expire_by}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const expire_by = clean(expire_by_Raw); if (expire_by) { const ts = new Date(expire_by).getTime(); if (!isNaN(ts)) data.expire_by = Math.floor(ts / 1000); } if (data.customer && data.customer.contact) { data.customer.contact = \"{{parameters.contact}}\".replace(/\\s+/g, \"\"); } return data;"
             }
         },
         "parameters": [
@@ -747,16 +747,19 @@
             {
                 "name": "contact",
                 "meta": {
-                    "displayName": "Customer contact number",
-                    "description": "Customer phone number in E.164 format (for example: +919876543210).",
-                    "displayType": "text",
-                    "placeholder": "+919876543210",
+                    "displayName": "Customer phone number",
+                    "description": "Customer phone number (for example: +919876543210).",
+                    "displayType": "phone",
+                    "placeholder": "Enter customer phone number",
                     "validation": {
-                        "required": false
+                        "required": false,
+                        "matchIsValidTel": true
                     },
                     "readOnly": false,
-                    "htmlProps": {},
-                    "value": ""
+                    "htmlProps": {
+                        "defaultCountry": "IN"
+                    },
+                    "value": "+91"
                 }
             },
             {
