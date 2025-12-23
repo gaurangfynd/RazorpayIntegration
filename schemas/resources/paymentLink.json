@@ -66,6 +66,7 @@
                     "email": "{{parameters.notify_email}}"
                 },
                 "expire_by": "{{parameters.expire_by}}",
+                "upi_link": "{{parameters.upi_link}}",
                 "accept_partial": "{{parameters.accept_partial}}",
                 "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
             },
@@ -838,6 +839,23 @@
                     "description": "Let Razorpay send reminders for this payment link.",
                     "displayType": "toggle",
                     "placeholder": "Send reminders",
+                    "readOnly": false,
+                    "value": false,
+                    "validation": {
+                        "disabled": false
+                    },
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
+            },
+            {
+                "name": "upi_link",
+                "meta": {
+                    "displayName": "Create UPI Link",
+                    "description": "Set this to true to create a UPI payment link. If omitted or set to false, a standard payment link is created instead.",
+                    "displayType": "toggle",
+                    "placeholder": "UPI Link",
                     "readOnly": false,
                     "value": false,
                     "validation": {
