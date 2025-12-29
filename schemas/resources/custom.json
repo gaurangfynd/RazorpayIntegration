@@ -41,8 +41,8 @@
             },
             "response": {
                 "error": {
-                    "code": "{{response.status}}",
-                    "message": "{{response.data.message}}"
+                    "message": "{{response.data.error.description}}",
+                    "code": "{{response.status}}"
                 },
                 "output": "{{response.data}}"
             }
