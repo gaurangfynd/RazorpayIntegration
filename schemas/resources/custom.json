@@ -5,7 +5,7 @@
                 "options": [
                     {
                         "label": "Custom API",
-                        "value": "custom.customAPI",
+                        "value": "custom.custom_api",
                         "description": "Creates a custom API."
                     }
                 ],
@@ -15,7 +15,7 @@
                 "description": "Select the operation you want to perform.",
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select an operation",
+                "placeholder": "Select An Operation",
                 "dependencies": {
                     "conditions": [
                         {
@@ -29,7 +29,7 @@
             "name": "operation"
         }
     ],
-    "customAPI": {
+    "custom_api": {
         "definition": {
             "qs": "{{parameters.query_params}}",
             "url": "{{parameters.base_url}}",
@@ -76,8 +76,8 @@
                     "validation": {
                         "required": true
                     },
-                    "placeholder": "The HTTP Method to be used for the request.",
-                    "description": "The HTTP Method to be used for the request.",
+                    "placeholder": "The HTTP Method To Be Used For The Request.",
+                    "description": "The HTTP method to be used for the request.",
                     "displayName": "Method",
                     "displayType": "select"
                 },
@@ -88,9 +88,9 @@
                     "validation": {
                         "required": true
                     },
-                    "description": "The URL of the HTTP Request.",
+                    "description": "The URL of the HTTP request.",
                     "displayName": "Base URL",
-                    "displayType": "url",
+                    "displayType": "text",
                     "placeholder": "Eg. https://www.example.com"
                 },
                 "name": "base_url"
@@ -106,7 +106,7 @@
                                         "errorMsg": "Key is required"
                                     }
                                 },
-                                "displayName": "key",
+                                "displayName": "Key",
                                 "displayType": "text"
                             },
                             "name": "key"
@@ -119,7 +119,7 @@
                                         "errorMsg": "Value is required"
                                     }
                                 },
-                                "displayName": "value",
+                                "displayName": "Value",
                                 "displayType": "text"
                             },
                             "name": "value"
@@ -129,7 +129,7 @@
                         "allowAdd": true
                     },
                     "placeholder": "Headers",
-                    "description": "You don't have to add authorization headers; we already did that for you.",
+                    "description": "You don't have to add authorization headers, we already did that for you.",
                     "displayName": "Headers",
                     "displayType": "keyvalue"
                 },
@@ -146,7 +146,7 @@
                                         "errorMsg": "Key is required"
                                     }
                                 },
-                                "displayName": "key",
+                                "displayName": "Key",
                                 "displayType": "text"
                             },
                             "name": "key"
@@ -159,7 +159,7 @@
                                         "errorMsg": "Value is required"
                                     }
                                 },
-                                "displayName": "value",
+                                "displayName": "Value",
                                 "displayType": "text"
                             },
                             "name": "value"
@@ -169,7 +169,7 @@
                         "allowAdd": true
                     },
                     "description": "Optional query string parameters as key-value pairs.",
-                    "placeholder": "Optional query string parameters as key-value pairs.",
+                    "placeholder": "Optional Query String Parameters As Key-Value Pairs.",
                     "displayName": "Query String",
                     "displayType": "keyvalue"
                 },
@@ -186,7 +186,7 @@
                     "description": "The Payload (Body) of the HTTP Request.",
                     "displayName": "Body",
                     "displayType": "code",
-                    "placeholder": "Enter JSON body"
+                    "placeholder": "Enter JSON Body"
                 },
                 "name": "body"
             }

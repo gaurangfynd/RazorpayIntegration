@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select an operation",
+                "placeholder": "Select An Operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -50,10 +50,10 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a minimal creation date from when disputes are to be fetched.",
+                    "description": "Filter disputes created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Enter the minimal creation date"
+                    "placeholder": "Select Start Date And Time"
                 },
                 "name": "from"
             },
@@ -71,20 +71,20 @@
                     "validation": {
                         "required": false
                     },
-                    "description": "Enter a maximal creation date till when disputes are to be fetched.",
+                    "description": "Filter disputes created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Enter the maximal creation date"
+                    "placeholder": "Select End Date And Time"
                 },
                 "name": "to"
             },
             {
                 "name": "count",
                 "meta": {
-                    "displayName": "Number of disputes",
+                    "displayName": "Number Of Disputes",
                     "displayType": "number",
-                    "placeholder": "Enter the number of disputes",
-                    "description": "Enter the number of disputes you want to fetch. Default value is 10, maximum value is 100.",
+                    "placeholder": "Enter Count (1–100)",
+                    "description": "Number of disputes to fetch (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -96,10 +96,10 @@
             {
                 "name": "skip",
                 "meta": {
-                    "displayName": "Number of disputes to skip",
+                    "displayName": "Number Of Disputes To Skip",
                     "displayType": "number",
-                    "placeholder": "Enter the number of disputes to skip",
-                    "description": "Enter the number of disputes to be skipped, default value is 0.",
+                    "placeholder": "Enter Offset (Skip)",
+                    "description": "Number of disputes to skip (default: 0).",
                     "validation": {
                         "required": false
                     },
@@ -141,7 +141,7 @@
                 "meta": {
                     "displayName": "Dispute ID",
                     "displayType": "text",
-                    "placeholder": "Enter a dispute ID",
+                    "placeholder": "Enter A Dispute ID",
                     "description": "Enter the dispute ID you want to fetch details for.",
                     "validation": {
                         "required": true

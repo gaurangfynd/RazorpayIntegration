@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select an operation",
+                "placeholder": "Select An Operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -53,7 +53,7 @@
                     "description": "Filter refunds created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select start date and time"
+                    "placeholder": "Select Start Date And Time"
                 },
                 "name": "from"
             },
@@ -74,16 +74,16 @@
                     "description": "Filter refunds created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select end date and time"
+                    "placeholder": "Select End Date And Time"
                 },
                 "name": "to"
             },
             {
                 "name": "count",
                 "meta": {
-                    "displayName": "Number of refunds",
+                    "displayName": "Number Of Refunds",
                     "displayType": "number",
-                    "placeholder": "Enter count (1–100)",
+                    "placeholder": "Enter Count (1–100)",
                     "description": "Number of refunds to fetch (default: 10, max: 100).",
                     "validation": {
                         "required": false
@@ -96,9 +96,9 @@
             {
                 "name": "skip",
                 "meta": {
-                    "displayName": "Number of refunds to skip",
+                    "displayName": "Number Of Refunds To Skip",
                     "displayType": "number",
-                    "placeholder": "Enter offset (skip)",
+                    "placeholder": "Enter Offset (Skip)",
                     "description": "Number of refunds to skip (default: 0).",
                     "validation": {
                         "required": false
@@ -141,7 +141,7 @@
                 "meta": {
                     "displayName": "Refund ID",
                     "displayType": "text",
-                    "placeholder": "Enter a refund ID (for example: rfnd_00001)",
+                    "placeholder": "Enter A Refund ID (For Example: rfnd_00001)",
                     "description": "Fetch a refund by its ID.",
                     "validation": {
                         "required": true

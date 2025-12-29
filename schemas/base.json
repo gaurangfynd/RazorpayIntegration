@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Razorpay Account",
                 "displayType": "autocomplete",
-                "placeholder": "Select a Razorpay account",
+                "placeholder": "Select A Razorpay Account",
                 "description": "Razorpay is an all-in-one financial platform for businesses to accept, process, and disburse payments online, offering features like payment gateways for cards/UPI/wallets.",
                 "options": [],
                 "config": {
@@ -29,7 +29,7 @@
             "meta": {
                 "displayName": "Resource",
                 "displayType": "select",
-                "placeholder": "Select a resource",
+                "placeholder": "Select A Resource",
                 "description": "Select the resource you want to work with.",
                 "options": [
                     {
