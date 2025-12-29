@@ -52,11 +52,9 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-            "body": {
-                "amount": "{{parameters.amount}}",
-                "currency": "{{parameters.currency}}",
-                "receipt": "{{parameters.receipt}}",
-                "notes": "{{parameters.notes}}"
+            "body": "{{parameters}}",
+            "transform": {
+                "body": "const data = { ...body }; delete data.continue_on_failure; return data;"
             },
             "response": {
                 "output": "{{response.data}}",
