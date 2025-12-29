@@ -66,6 +66,11 @@
                         "label": "Dispute",
                         "value": "dispute",
                         "description": "Fetch disputes and fetch a dispute details by ID."
+                    },
+                    {
+                        "label": "Custom",
+                        "value": "custom",
+                        "description": "Perform advanced or non-standard Razorpay operations."
                     }
                 ],
                 "value": "",
