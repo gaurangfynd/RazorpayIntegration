@@ -153,7 +153,8 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/refunds/",
             "transform": {
-                "url": "function transformURL() {\n  var rid = (typeof parameters !== 'undefined' && parameters && parameters.refundId != null)\n    ? parameters.refundId\n    : '{{parameters.refundId}}';\n\n  var refundId = rid;\n\n  if (refundId && typeof refundId === 'object') {\n    refundId = refundId.value || refundId.id || refundId.refundId || (refundId.data && (refundId.data.value || refundId.data.id || refundId.data.refundId));\n  }\n\n  if (typeof refundId === 'string') {\n    var raw = refundId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        refundId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.refundId || (obj.data && (obj.data.value || obj.data.id || obj.data.refundId)) || raw\n          : raw;\n      } catch (e) {\n        refundId = raw;\n      }\n    } else {\n      refundId = raw;\n    }\n  }\n\n  if (!refundId || refundId === '[object Object]') throw new Error('Invalid refundId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(refundId));\n}\nreturn transformURL();"
+                "url": "function transformURL() {\n  var rid = (typeof parameters !== 'undefined' && parameters && parameters.refundId != null)\n    ? parameters.refundId\n    : '{{parameters.refundId}}';\n\n  var refundId = rid;\n\n  if (refundId && typeof refundId === 'object') {\n    refundId = refundId.value || refundId.id || refundId.refundId || (refundId.data && (refundId.data.value || refundId.data.id || refundId.data.refundId));\n  }\n\n  if (typeof refundId === 'string') {\n    var raw = refundId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        refundId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.refundId || (obj.data && (obj.data.value || obj.data.id || obj.data.refundId)) || raw\n          : raw;\n      } catch (e) {\n        refundId = raw;\n      }\n    } else {\n      refundId = raw;\n    }\n  }\n\n  if (!refundId || refundId === '[object Object]') throw new Error('Invalid refundId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(refundId));\n}\nreturn transformURL();",
+                "error": "const obj = { message: error.message === 'undefined'  ? error.description : error.message, code: error && error.code != null ? error.code : null }; return obj;"
             },
             "headers": {
                 "Content-Type": "application/json",
@@ -162,6 +163,7 @@
             "response": {
                 "output": "{{response?.data}}",
                 "error": {
+                    "description": "{{response.data.error.description}}",
                     "message": "{{response.data.message}}",
                     "code": "{{response.status}}"
                 }

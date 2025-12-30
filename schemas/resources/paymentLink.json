@@ -1025,7 +1025,8 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payment_links/",
             "transform": {
-                "url": "function transformURL() {\n  var plid = (typeof parameters !== 'undefined' && parameters && parameters.paymentLinkId != null)\n    ? parameters.paymentLinkId\n    : '{{parameters.paymentLinkId}}';\n\n  var paymentLinkId = plid;\n\n  if (paymentLinkId && typeof paymentLinkId === 'object') {\n    paymentLinkId = paymentLinkId.value || paymentLinkId.id || paymentLinkId.paymentLinkId || (paymentLinkId.data && (paymentLinkId.data.value || paymentLinkId.data.id || paymentLinkId.data.paymentLinkId));\n  }\n\n  if (typeof paymentLinkId === 'string') {\n    var raw = paymentLinkId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        paymentLinkId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.paymentLinkId || (obj.data && (obj.data.value || obj.data.id || obj.data.paymentLinkId)) || raw\n          : raw;\n      } catch (e) {\n        paymentLinkId = raw;\n      }\n    } else {\n      paymentLinkId = raw;\n    }\n  }\n\n  if (!paymentLinkId || paymentLinkId === '[object Object]') throw new Error('Invalid paymentLinkId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(paymentLinkId));\n}\nreturn transformURL();"
+                "url": "function transformURL() {\n  var plid = (typeof parameters !== 'undefined' && parameters && parameters.paymentLinkId != null)\n    ? parameters.paymentLinkId\n    : '{{parameters.paymentLinkId}}';\n\n  var paymentLinkId = plid;\n\n  if (paymentLinkId && typeof paymentLinkId === 'object') {\n    paymentLinkId = paymentLinkId.value || paymentLinkId.id || paymentLinkId.paymentLinkId || (paymentLinkId.data && (paymentLinkId.data.value || paymentLinkId.data.id || paymentLinkId.data.paymentLinkId));\n  }\n\n  if (typeof paymentLinkId === 'string') {\n    var raw = paymentLinkId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        paymentLinkId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.paymentLinkId || (obj.data && (obj.data.value || obj.data.id || obj.data.paymentLinkId)) || raw\n          : raw;\n      } catch (e) {\n        paymentLinkId = raw;\n      }\n    } else {\n      paymentLinkId = raw;\n    }\n  }\n\n  if (!paymentLinkId || paymentLinkId === '[object Object]') throw new Error('Invalid paymentLinkId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(paymentLinkId));\n}\nreturn transformURL();",
+                "error": "const obj = { message: error.message === 'undefined'  ? error.description : error.message, code: error && error.code != null ? error.code : null }; return obj;"
             },
             "headers": {
                 "Content-Type": "application/json",
@@ -1034,6 +1035,7 @@
             "response": {
                 "output": "{{response.data}}",
                 "error": {
+                    "description": "{{response.data.error.description}}",
                     "message": "{{response.data.message}}",
                     "code": "{{response.status}}"
                 }
