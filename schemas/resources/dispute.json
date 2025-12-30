@@ -151,7 +151,10 @@
         ],
         "definition": {
             "method": "GET",
-            "url": "https://api.razorpay.com/v1/disputes/{{parameters.disputeId}}",
+            "url": "https://api.razorpay.com/v1/disputes/",
+            "transform": {
+                "url": "function transformURL() {\n  var did = (typeof parameters !== 'undefined' && parameters && parameters.disputeId != null)\n    ? parameters.disputeId\n    : '{{parameters.disputeId}}';\n\n  var disputeId = did;\n\n  if (disputeId && typeof disputeId === 'object') {\n    disputeId = disputeId.value || disputeId.id || disputeId.disputeId || (disputeId.data && (disputeId.data.value || disputeId.data.id || disputeId.data.disputeId));\n  }\n\n  if (typeof disputeId === 'string') {\n    var raw = disputeId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        disputeId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.disputeId || (obj.data && (obj.data.value || obj.data.id || obj.data.disputeId)) || raw\n          : raw;\n      } catch (e) {\n        disputeId = raw;\n      }\n    } else {\n      disputeId = raw;\n    }\n  }\n\n  if (!disputeId || disputeId === '[object Object]') throw new Error('Invalid disputeId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(disputeId));\n}\nreturn transformURL();"
+            },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"

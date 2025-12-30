@@ -198,7 +198,10 @@
         ],
         "definition": {
             "method": "GET",
-            "url": "https://api.razorpay.com/v1/invoices/{{parameters.invoiceId}}",
+            "url": "https://api.razorpay.com/v1/invoices/",
+            "transform": {
+                "url": "function transformURL() {\n  var iid = (typeof parameters !== 'undefined' && parameters && parameters.invoiceId != null)\n    ? parameters.invoiceId\n    : '{{parameters.invoiceId}}';\n\n  var invoiceId = iid;\n\n  if (invoiceId && typeof invoiceId === 'object') {\n    invoiceId = invoiceId.value || invoiceId.id || invoiceId.invoiceId || (invoiceId.data && (invoiceId.data.value || invoiceId.data.id || invoiceId.data.invoiceId));\n  }\n\n  if (typeof invoiceId === 'string') {\n    var raw = invoiceId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        invoiceId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.invoiceId || (obj.data && (obj.data.value || obj.data.id || obj.data.invoiceId)) || raw\n          : raw;\n      } catch (e) {\n        invoiceId = raw;\n      }\n    } else {\n      invoiceId = raw;\n    }\n  }\n\n  if (!invoiceId || invoiceId === '[object Object]') throw new Error('Invalid invoiceId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(invoiceId));\n}\nreturn transformURL();"
+            },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
