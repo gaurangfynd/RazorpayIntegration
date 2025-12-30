@@ -35,12 +35,12 @@
                     {
                         "label": "Order",
                         "value": "order",
-                        "description": "Create orders, fetch orders, and fetch payments for an order."
+                        "description": "Create order, fetch orders, and fetch payments for an order."
                     },
                     {
                         "label": "Payment Link",
                         "value": "paymentLink",
-                        "description": "Create payment links, fetch payment links, and fetch a payment link by ID."
+                        "description": "Create payment link, fetch payment links, and fetch a payment link by ID."
                     },
                     {
                         "label": "Payment",
