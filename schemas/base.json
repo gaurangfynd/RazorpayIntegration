@@ -35,37 +35,37 @@
                     {
                         "label": "Order",
                         "value": "order",
-                        "description": "Create order, fetch orders, and fetch payments for an order."
+                        "description": "Create order, get orders, and get payments for an order."
                     },
                     {
                         "label": "Payment Link",
                         "value": "paymentLink",
-                        "description": "Create payment link, fetch payment links, and fetch a payment link by ID."
+                        "description": "Create payment link, get payment links, and get a payment link by ID."
                     },
                     {
                         "label": "Payment",
                         "value": "payment",
-                        "description": "Fetch payments, fetch a payment by ID, and fetch card details for a payment."
+                        "description": "Get payments, get a payment by ID, and get card details for a payment."
                     },
                     {
                         "label": "Refund",
                         "value": "refund",
-                        "description": "Fetch refunds and fetch refund details by ID."
+                        "description": "Get refunds and get refund details by ID."
                     },
                     {
                         "label": "Settlement",
                         "value": "settlement",
-                        "description": "Fetch settlements and fetch settlement details by ID."
+                        "description": "Get settlements and get settlement details by ID."
                     },
                     {
                         "label": "Invoice",
                         "value": "invoice",
-                        "description": "Fetch invoices, fetch an invoice by ID, and fetch invoices for a subscription."
+                        "description": "Get invoices, get an invoice by ID, and get invoices for a subscription."
                     },
                     {
                         "label": "Dispute",
                         "value": "dispute",
-                        "description": "Fetch disputes and fetch a dispute details by ID."
+                        "description": "Get disputes and get dispute details by ID."
                     },
                     {
                         "label": "Custom",

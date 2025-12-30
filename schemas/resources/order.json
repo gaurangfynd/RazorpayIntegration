@@ -14,19 +14,19 @@
                         "description": "Create an order to generate an order ID for capturing a payment."
                     },
                     {
-                        "label": "Fetch All Orders",
-                        "value": "order.fetchOrders",
-                        "description": "Fetch a list of orders with optional filters (count, skip, from, to, receipt)."
+                        "label": "Get All Orders",
+                        "value": "order.getOrders",
+                        "description": "Get a list of orders with optional filters (count, skip, from, to, receipt)."
                     },
                     {
-                        "label": "Fetch Order Details By ID",
-                        "value": "order.fetchOrderByOrderId",
-                        "description": "Fetch order details using the order ID."
+                        "label": "Get Order Details By ID",
+                        "value": "order.getOrderByOrderId",
+                        "description": "Get order details using the order ID."
                     },
                     {
-                        "label": "Fetch All Payments Related To An Order",
-                        "value": "order.fetchPaymentsByOrderId",
-                        "description": "Fetch payments associated with an order using the order ID."
+                        "label": "Get All Payments Related To An Order",
+                        "value": "order.getPaymentsByOrderId",
+                        "description": "Get payments associated with an order using the order ID."
                     }
                 ],
                 "validation": {
@@ -658,7 +658,7 @@
             }
         ]
     },
-    "fetchOrders": {
+    "getOrders": {
         "parameters": [
             {
                 "meta": {
@@ -708,7 +708,7 @@
                     "displayName": "Number Of Orders",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of orders to fetch (default: 10, max: 100).",
+                    "description": "Number of orders to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -771,7 +771,7 @@
             }
         }
     },
-    "fetchOrderByOrderId": {
+    "getOrderByOrderId": {
         "parameters": [
             {
                 "name": "orderId",
@@ -779,7 +779,7 @@
                     "displayName": "Order ID",
                     "displayType": "text",
                     "placeholder": "Enter An Order ID (For Example: order_00001)",
-                    "description": "Fetch an order by its ID.",
+                    "description": "Get an order by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -805,7 +805,7 @@
             }
         }
     },
-    "fetchPaymentsByOrderId": {
+    "getPaymentsByOrderId": {
         "parameters": [
             {
                 "name": "orderId",
@@ -813,7 +813,7 @@
                     "displayName": "Order ID",
                     "displayType": "text",
                     "placeholder": "Enter An Order ID (For Example: order_00001)",
-                    "description": "Fetch payments associated with an order using the order ID.",
+                    "description": "Get payments associated with an order using the order ID.",
                     "validation": {
                         "required": true
                     }

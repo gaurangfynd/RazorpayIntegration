@@ -9,19 +9,19 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch All Payments",
-                        "value": "payment.fetchPayments",
-                        "description": "Fetch a list of payments with optional filters (count, skip, from, to)."
+                        "label": "Get All Payments",
+                        "value": "payment.getPayments",
+                        "description": "Get a list of payments with optional filters (count, skip, from, to)."
                     },
                     {
-                        "label": "Fetch Payment Details By ID",
-                        "value": "payment.fetchPaymentByPaymentId",
-                        "description": "Fetch payment details using the payment ID."
+                        "label": "Get Payment Details By ID",
+                        "value": "payment.getPaymentByPaymentId",
+                        "description": "Get payment details using the payment ID."
                     },
                     {
-                        "label": "Fetch Card Details For A Payment",
-                        "value": "payment.fetchCardDetailsOfPayment",
-                        "description": "Fetch card details for a payment."
+                        "label": "Get Card Details For A Payment",
+                        "value": "payment.getCardDetailsOfPayment",
+                        "description": "Get card details for a payment."
                     }
                 ],
                 "validation": {
@@ -39,7 +39,7 @@
             }
         }
     ],
-    "fetchPayments": {
+    "getPayments": {
         "parameters": [
             {
                 "meta": {
@@ -89,7 +89,7 @@
                     "displayName": "Number Of Payments",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of payments to fetch (default: 10, max: 100).",
+                    "description": "Number of payments to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -139,7 +139,7 @@
             }
         }
     },
-    "fetchPaymentByPaymentId": {
+    "getPaymentByPaymentId": {
         "parameters": [
             {
                 "name": "paymentId",
@@ -147,7 +147,7 @@
                     "displayName": "Payment ID",
                     "displayType": "text",
                     "placeholder": "Enter A Payment ID (For Example: pay_00001)",
-                    "description": "Fetch a payment by its ID.",
+                    "description": "Get a payment by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -173,7 +173,7 @@
             }
         }
     },
-    "fetchCardDetailsOfPayment": {
+    "getCardDetailsOfPayment": {
         "parameters": [
             {
                 "name": "paymentId",
@@ -181,7 +181,7 @@
                     "displayName": "Payment ID",
                     "displayType": "text",
                     "placeholder": "Enter A Payment ID (For Example: pay_00001)",
-                    "description": "Fetch card details for a payment using the payment ID.",
+                    "description": "Get card details for a payment using the payment ID.",
                     "validation": {
                         "required": true
                     }

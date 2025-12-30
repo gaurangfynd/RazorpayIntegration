@@ -9,14 +9,14 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch All Settlements",
-                        "value": "settlement.fetchSettlements",
-                        "description": "Fetch details of all settlements."
+                        "label": "Get All Settlements",
+                        "value": "settlement.getSettlements",
+                        "description": "Get details of all settlements."
                     },
                     {
-                        "label": "Fetch Settlement Details By ID",
-                        "value": "settlement.fetchSettlementBySettlementId",
-                        "description": "Fetch settlement details using the settlement ID."
+                        "label": "Get Settlement Details By ID",
+                        "value": "settlement.getSettlementBySettlementId",
+                        "description": "Get settlement details using the settlement ID."
                     }
                 ],
                 "validation": {
@@ -34,7 +34,7 @@
             }
         }
     ],
-    "fetchSettlements": {
+    "getSettlements": {
         "parameters": [
             {
                 "meta": {
@@ -84,7 +84,7 @@
                     "displayName": "Number Of Settlements",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of settlements to fetch (default: 10, max: 100).",
+                    "description": "Number of settlements to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -134,7 +134,7 @@
             }
         }
     },
-    "fetchSettlementBySettlementId": {
+    "getSettlementBySettlementId": {
         "parameters": [
             {
                 "name": "settlementId",
@@ -142,7 +142,7 @@
                     "displayName": "Settlement ID",
                     "displayType": "text",
                     "placeholder": "Enter A Settlement ID (For Example: setl_00001)",
-                    "description": "Fetch a settlement by its ID.",
+                    "description": "Get a settlement by its ID.",
                     "validation": {
                         "required": true
                     }

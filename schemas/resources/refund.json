@@ -9,14 +9,14 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch All Refunds",
-                        "value": "refund.fetchRefunds",
-                        "description": "Fetch details of all refunds."
+                        "label": "Get All Refunds",
+                        "value": "refund.getRefunds",
+                        "description": "Get details of all refunds."
                     },
                     {
-                        "label": "Fetch Refund Details By ID",
-                        "value": "refund.fetchRefundByRefundId",
-                        "description": "Fetch refund details using the refund ID."
+                        "label": "Get Refund Details By ID",
+                        "value": "refund.getRefundByRefundId",
+                        "description": "Get refund details using the refund ID."
                     }
                 ],
                 "validation": {
@@ -34,7 +34,7 @@
             }
         }
     ],
-    "fetchRefunds": {
+    "getRefunds": {
         "parameters": [
             {
                 "meta": {
@@ -84,7 +84,7 @@
                     "displayName": "Number Of Refunds",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of refunds to fetch (default: 10, max: 100).",
+                    "description": "Number of refunds to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -134,7 +134,7 @@
             }
         }
     },
-    "fetchRefundByRefundId": {
+    "getRefundByRefundId": {
         "parameters": [
             {
                 "name": "refundId",
@@ -142,7 +142,7 @@
                     "displayName": "Refund ID",
                     "displayType": "text",
                     "placeholder": "Enter A Refund ID (For Example: rfnd_00001)",
-                    "description": "Fetch a refund by its ID.",
+                    "description": "Get a refund by its ID.",
                     "validation": {
                         "required": true
                     }

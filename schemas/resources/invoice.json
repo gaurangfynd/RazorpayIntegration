@@ -9,19 +9,19 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch All Invoices",
-                        "value": "invoice.fetchInvoices",
-                        "description": "Fetch details of all invoices."
+                        "label": "Get All Invoices",
+                        "value": "invoice.getInvoices",
+                        "description": "Get details of all invoices."
                     },
                     {
-                        "label": "Fetch Invoice Details By ID",
-                        "value": "invoice.fetchInvoiceByInvoiceId",
-                        "description": "Fetch invoice details using the invoice ID."
+                        "label": "Get Invoice Details By ID",
+                        "value": "invoice.getInvoiceByInvoiceId",
+                        "description": "Get invoice details using the invoice ID."
                     },
                     {
-                        "label": "Fetch All Invoices For A Subscription",
-                        "value": "invoice.fetchInvoicesBySubscriptionId",
-                        "description": "Fetch all invoices for a subscription using the subscription ID."
+                        "label": "Get All Invoices For A Subscription",
+                        "value": "invoice.getInvoicesBySubscriptionId",
+                        "description": "Get all invoices for a subscription using the subscription ID."
                     }
                 ],
                 "validation": {
@@ -39,7 +39,7 @@
             }
         }
     ],
-    "fetchInvoices": {
+    "getInvoices": {
         "parameters": [
             {
                 "meta": {
@@ -89,7 +89,7 @@
                     "displayName": "Number Of Invoices",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of invoices to fetch (default: 10, max: 100).",
+                    "description": "Number of invoices to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -181,7 +181,7 @@
             }
         }
     },
-    "fetchInvoiceByInvoiceId": {
+    "getInvoiceByInvoiceId": {
         "parameters": [
             {
                 "name": "invoiceId",
@@ -189,7 +189,7 @@
                     "displayName": "Invoice ID",
                     "displayType": "text",
                     "placeholder": "Enter An Invoice ID (For Example: inv_00001)",
-                    "description": "Fetch an invoice by its ID.",
+                    "description": "Get an invoice by its ID.",
                     "validation": {
                         "required": true
                     }
@@ -217,7 +217,7 @@
             }
         }
     },
-    "fetchInvoicesBySubscriptionId": {
+    "getInvoicesBySubscriptionId": {
         "parameters": [
             {
                 "name": "subscriptionId",
@@ -225,7 +225,7 @@
                     "displayName": "Subscription ID",
                     "displayType": "text",
                     "placeholder": "Enter A Subscription ID (For Example: sub_00001)",
-                    "description": "Fetch invoices for a subscription using the subscription ID.",
+                    "description": "Get invoices for a subscription using the subscription ID.",
                     "validation": {
                         "required": true
                     }

@@ -9,14 +9,14 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Fetch All Disputes",
-                        "value": "dispute.fetchDisputes",
-                        "description": "Fetch all disputes raised by customers."
+                        "label": "Get All Disputes",
+                        "value": "dispute.getDisputes",
+                        "description": "Get all disputes raised by customers."
                     },
                     {
-                        "label": "Fetch Dispute Details By ID",
-                        "value": "dispute.fetchDisputeByDisputeId",
-                        "description": "Fetch dispute details using the dispute ID."
+                        "label": "Get Dispute Details By ID",
+                        "value": "dispute.getDisputeByDisputeId",
+                        "description": "Get dispute details using the dispute ID."
                     }
                 ],
                 "validation": {
@@ -34,7 +34,7 @@
             }
         }
     ],
-    "fetchDisputes": {
+    "getDisputes": {
         "parameters": [
             {
                 "meta": {
@@ -84,7 +84,7 @@
                     "displayName": "Number Of Disputes",
                     "displayType": "number",
                     "placeholder": "Enter Count (1–100)",
-                    "description": "Number of disputes to fetch (default: 10, max: 100).",
+                    "description": "Number of disputes to get (default: 10, max: 100).",
                     "validation": {
                         "required": false
                     },
@@ -134,7 +134,7 @@
             }
         }
     },
-    "fetchDisputeByDisputeId": {
+    "getDisputeByDisputeId": {
         "parameters": [
             {
                 "name": "disputeId",
@@ -142,7 +142,7 @@
                     "displayName": "Dispute ID",
                     "displayType": "text",
                     "placeholder": "Enter A Dispute ID",
-                    "description": "Enter the dispute ID you want to fetch details for.",
+                    "description": "Enter the dispute ID you want to get details for.",
                     "validation": {
                         "required": true
                     }
