@@ -84,36 +84,6 @@
                 "name": "to"
             },
             {
-                "name": "count",
-                "meta": {
-                    "displayName": "Number Of Invoices",
-                    "displayType": "number",
-                    "placeholder": "Enter Count (1–100)",
-                    "description": "Number of invoices to get (default: 10, max: 100).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
-                "name": "skip",
-                "meta": {
-                    "displayName": "Number Of Invoices To Skip",
-                    "displayType": "number",
-                    "placeholder": "Enter Offset (Skip)",
-                    "description": "Number of invoices to skip (default: 0).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
                 "name": "payment_id",
                 "meta": {
                     "displayName": "Payment ID",
@@ -156,8 +126,6 @@
         "definition": {
             "method": "GET",
             "qs": {
-                "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}",
                 "payment_id": "{{parameters.payment_id}}",
                 "receipt": "{{parameters.receipt_id}}",
                 "customer_id": "{{parameters.customer_id}}",
@@ -168,6 +136,18 @@
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
+            },
+            "pagination": {
+                "type": "offset",
+                "default": {
+                    "count": 100,
+                    "skip": 0
+                },
+                "qs": {
+                    "count": "{{pagination.count}}",
+                    "skip": "{{pagination.skip}} + {{response.data.count}}"
+                },
+                "condition": "{{response.data.count}} >= 0"
             },
             "response": {
                 "output": "{{response.data}}",
@@ -242,8 +222,20 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
+            "pagination": {
+                "type": "offset",
+                "default": {
+                    "count": 100,
+                    "skip": 0
+                },
+                "qs": {
+                    "count": "{{pagination.count}}",
+                    "skip": "{{pagination.skip}} + {{response.data.count}}"
+                },
+                "condition": "{{response.data.count}} >= 0"
+            },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response.data.items}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"

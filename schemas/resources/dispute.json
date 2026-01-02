@@ -77,43 +77,11 @@
                     "placeholder": "Select End Date And Time"
                 },
                 "name": "to"
-            },
-            {
-                "name": "count",
-                "meta": {
-                    "displayName": "Number Of Disputes",
-                    "displayType": "number",
-                    "placeholder": "Enter Count (1–100)",
-                    "description": "Number of disputes to get (default: 10, max: 100).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
-                "name": "skip",
-                "meta": {
-                    "displayName": "Number Of Disputes To Skip",
-                    "displayType": "number",
-                    "placeholder": "Enter Offset (Skip)",
-                    "description": "Number of disputes to skip (default: 0).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
             }
         ],
         "definition": {
             "method": "GET",
             "qs": {
-                "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}",
                 "from": "{{parameters.from}}",
                 "to": "{{parameters.to}}"
             },
@@ -122,8 +90,20 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
+            "pagination": {
+                "type": "offset",
+                "default": {
+                    "count": 100,
+                    "skip": 0
+                },
+                "qs": {
+                    "count": "{{pagination.count}}",
+                    "skip": "{{pagination.skip}} + {{response.data.count}}"
+                },
+                "condition": "{{response.data.count}} >= 0"
+            },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response.data.items}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"

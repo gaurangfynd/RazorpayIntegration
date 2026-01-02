@@ -77,60 +77,40 @@
                     "placeholder": "Select End Date And Time"
                 },
                 "name": "to"
-            },
-            {
-                "name": "count",
-                "meta": {
-                    "displayName": "Number Of Refunds",
-                    "displayType": "number",
-                    "placeholder": "Enter Count (1–100)",
-                    "description": "Number of refunds to get (default: 10, max: 100).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
-                "name": "skip",
-                "meta": {
-                    "displayName": "Number Of Refunds To Skip",
-                    "displayType": "number",
-                    "placeholder": "Enter Offset (Skip)",
-                    "description": "Number of refunds to skip (default: 0).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
             }
         ],
         "definition": {
             "method": "GET",
+            "url": "https://api.razorpay.com/v1/refunds",
             "qs": {
-                "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}",
                 "from": "{{parameters.from}}",
                 "to": "{{parameters.to}}"
             },
-            "url": "https://api.razorpay.com/v1/refunds",
+            "pagination": {
+                "type": "offset",
+                "default": {
+                    "count": 100,
+                    "skip": 0
+                },
+                "qs": {
+                    "count": "{{pagination.count}}",
+                    "skip": "{{pagination.skip}} + {{response.data.count}}"
+                },
+                "condition": "{{response.data.count}} > 0"
+            },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
+            "transform": {
+                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && String(v).trim() !== '' ? String(v).trim() : null; const toUnix = v => { v = clean(v); if (!v) return null; if (/^\\\\d+$/.test(v)) { const n = parseInt(v, 10); if (isNaN(n)) return null; return v.length >= 13 ? Math.floor(n / 1000) : n; } const ts = new Date(v).getTime(); return isNaN(ts) ? null : Math.floor(ts / 1000); }; const from = toUnix(fromRaw); const to = toUnix(toRaw); if (from != null) params.from = from; else delete params.from; if (to != null) params.to = to; else delete params.to; return params;"
+            },
             "response": {
-                "output": "{{response?.data}}",
+                "output": "{{response.data.items}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            },
-            "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },

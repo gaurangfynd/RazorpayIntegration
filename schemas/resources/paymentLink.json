@@ -951,45 +951,39 @@
                 "name": "to"
             },
             {
-                "name": "count",
+                "name": "payment_id",
                 "meta": {
-                    "displayName": "Number Of Payment Links",
-                    "displayType": "number",
-                    "placeholder": "Enter Count (1–100)",
-                    "description": "Number of payment links to get (default: 10, max: 100).",
+                    "displayName": "Payment ID",
+                    "displayType": "text",
+                    "placeholder": "Enter A Payment ID (For Example: pay_00001)",
+                    "description": "Unique identifier of the payment associated with the Payment Link.",
                     "validation": {
                         "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
                     }
                 }
             },
             {
-                "name": "skip",
+                "name": "reference_id",
                 "meta": {
-                    "displayName": "Number Of Payment Links To Skip",
-                    "displayType": "number",
-                    "placeholder": "Enter Offset (Skip)",
-                    "description": "Number of payment links to skip (default: 0).",
+                    "displayName": "Reference ID",
+                    "displayType": "text",
+                    "placeholder": "Enter A Reference ID",
+                    "description": "Unique reference number entered while creating the Payment Link.",
                     "validation": {
                         "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
                     }
                 }
             }
         ],
         "definition": {
             "method": "GET",
-            "qs": {
-                "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}",
-                "from": "{{parameters.from}}",
-                "to": "{{parameters.to}}"
-            },
             "url": "https://api.razorpay.com/v1/payment_links/",
+            "qs": {
+                "from": "{{parameters.from}}",
+                "to": "{{parameters.to}}",
+                "payment_id": "{{parameters.payment_id}}",
+                "reference_id": "{{parameters.reference_id}}"
+            },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"

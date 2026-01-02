@@ -54,7 +54,7 @@
             },
             "body": "{{parameters}}",
             "transform": {
-                "body": "const data = { ...body }; delete data.continue_on_failure; return data;"
+                "body": "const clean = v => (v === undefined || v === null || v === '' || v === 'undefined' || v === 'null') ? undefined : v; const out = {}; const amount = clean(body.amount); if (amount !== undefined) out.amount = amount; const currency = clean(body.currency); if (currency !== undefined) out.currency = currency; const receipt = clean(body.receipt); if (receipt !== undefined) out.receipt = receipt; const notesRaw = body.notes && typeof body.notes === 'object' ? body.notes : undefined; if (notesRaw) { const notes = {}; Object.keys(notesRaw).forEach(k => { const val = clean(notesRaw[k]); if (val !== undefined) notes[k] = val; }); if (Object.keys(notes).length) out.notes = notes; } return out;"
             },
             "response": {
                 "output": "{{response.data}}",
@@ -62,7 +62,7 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            }
+            } 
         },
         "parameters": [
             {
@@ -617,7 +617,7 @@
                     "placeholder": "Enter Receipt Reference (For Example: rcpt_0001)",
                     "description": "Receipt ID for internal reference for the order (max: 40 characters).",
                     "validation": {
-                        "required": true,
+                        "required": false,
                         "max": 40
                     }
                 }
@@ -703,36 +703,6 @@
                 "name": "to"
             },
             {
-                "name": "count",
-                "meta": {
-                    "displayName": "Number Of Orders",
-                    "displayType": "number",
-                    "placeholder": "Enter Count (1–100)",
-                    "description": "Number of orders to get (default: 10, max: 100).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
-                "name": "skip",
-                "meta": {
-                    "displayName": "Number Of Orders To Skip",
-                    "displayType": "number",
-                    "placeholder": "Enter Offset (Skip)",
-                    "description": "Number of orders to skip (default: 0).",
-                    "validation": {
-                        "required": false
-                    },
-                    "htmlProps": {
-                        "allowDynamic": true
-                    }
-                }
-            },
-            {
                 "name": "receipt",
                 "meta": {
                     "displayName": "Receipt",
@@ -747,27 +717,37 @@
         ],
         "definition": {
             "method": "GET",
+            "url": "https://api.razorpay.com/v1/orders",
             "qs": {
-                "count": "{{parameters.count}}",
-                "skip": "{{parameters.skip}}",
                 "from": "{{parameters.from}}",
                 "to": "{{parameters.to}}",
                 "receipt": "{{parameters.receipt}}"
             },
-            "url": "https://api.razorpay.com/v1/orders",
+            "pagination": {
+                "type": "offset",
+                "default": {
+                    "count": 100,
+                    "skip": 0
+                },
+                "qs": {
+                    "count": "{{pagination.count}}",
+                    "skip": "{{pagination.skip}} + {{response.data.count}}"
+                },
+                "condition": "{{response.data.count}} >= 0"
+            },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
+            "transform": {
+                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && String(v).trim() !== '' ? String(v).trim() : null; const toUnix = v => { v = clean(v); if (!v) return null; if (/^\\d+$/.test(v)) { const n = parseInt(v, 10); if (isNaN(n)) return null; return v.length >= 13 ? Math.floor(n / 1000) : n; } const ts = new Date(v).getTime(); return isNaN(ts) ? null : Math.floor(ts / 1000); }; const from = toUnix(fromRaw); const to = toUnix(toRaw); if (from != null) params.from = from; else delete params.from; if (to != null) params.to = to; else delete params.to; return params;"
+            },
             "response": {
-                "output": "{{response.data}}",
+                "output": "{{response.data.items}}",
                 "error": {
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            },
-            "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },
