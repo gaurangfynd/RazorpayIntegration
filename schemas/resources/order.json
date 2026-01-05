@@ -16,7 +16,7 @@
                     {
                         "label": "Get All Orders",
                         "value": "order.getOrders",
-                        "description": "Get a list of orders with optional filters (count, skip, from, to, receipt)."
+                        "description": "Get a list of orders with optional filters (from, to, receipt)."
                     },
                     {
                         "label": "Get Order Details By ID",

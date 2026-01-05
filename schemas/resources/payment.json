@@ -11,7 +11,7 @@
                     {
                         "label": "Get All Payments",
                         "value": "payment.getPayments",
-                        "description": "Get a list of payments with optional filters (count, skip, from, to)."
+                        "description": "Get a list of payments with optional filters (from, to)."
                     },
                     {
                         "label": "Get Payment Details By ID",
