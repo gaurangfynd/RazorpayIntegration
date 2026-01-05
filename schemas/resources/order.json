@@ -62,7 +62,7 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            } 
+            }
         },
         "parameters": [
             {
@@ -713,6 +713,31 @@
                         "required": false
                     }
                 }
+            },
+            {
+                "name": "authorized",
+                "meta": {
+                    "displayType": "select",
+                    "displayName": "Payment Authorization",
+                    "placeholder": "Select Payment Authorization Status",
+                    "description": "Filter orders by payment authorization status. For dynamic input, use 1 for authorized payments and 0 for unauthorized payments.",
+                    "validation": {
+                        "required": false
+                    },
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "Authorized Payments"
+                        },
+                        {
+                            "value": "0",
+                            "label": "Unauthorized Payments"
+                        }
+                    ],
+                    "htmlProps": {
+                        "allowDynamic": true
+                    }
+                }
             }
         ],
         "definition": {
@@ -721,7 +746,8 @@
             "qs": {
                 "from": "{{parameters.from}}",
                 "to": "{{parameters.to}}",
-                "receipt": "{{parameters.receipt}}"
+                "receipt": "{{parameters.receipt}}",
+                "authorized": "{{parameters.authorized}}"
             },
             "pagination": {
                 "type": "offset",
@@ -733,14 +759,14 @@
                     "count": "{{pagination.count}}",
                     "skip": "{{pagination.skip}} + {{response.data.count}}"
                 },
-                "condition": "{{response.data.count}} > 0"
+                "condition": "{{response.data.count}} >= 0"
             },
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
             "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && String(v).trim() !== '' ? String(v).trim() : null; const toUnix = v => { v = clean(v); if (!v) return null; if (/^\\d+$/.test(v)) { const n = parseInt(v, 10); if (isNaN(n)) return null; return v.length >= 13 ? Math.floor(n / 1000) : n; } const ts = new Date(v).getTime(); return isNaN(ts) ? null : Math.floor(ts / 1000); }; const from = toUnix(fromRaw); const to = toUnix(toRaw); if (from != null) params.from = from; else delete params.from; if (to != null) params.to = to; else delete params.to; return params;"
+                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const authRaw = \"{{parameters.authorized}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && String(v).trim() !== '' ? String(v).trim() : null; const toUnix = v => { v = clean(v); if (!v) return null; if (/^\\d+$/.test(v)) { const n = parseInt(v, 10); if (isNaN(n)) return null; return v.length >= 13 ? Math.floor(n / 1000) : n; } const ts = new Date(v).getTime(); return isNaN(ts) ? null : Math.floor(ts / 1000); }; const from = toUnix(fromRaw); const to = toUnix(toRaw); if (from != null) params.from = from; else delete params.from; if (to != null) params.to = to; else delete params.to; const auth = clean(authRaw); if (auth != null) { const a = parseInt(auth, 10); if (!isNaN(a)) params.authorized = a; else delete params.authorized; } else { delete params.authorized; } return params;"
             },
             "response": {
                 "output": "{{response.data.items}}",
