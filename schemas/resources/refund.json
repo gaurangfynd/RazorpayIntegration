@@ -96,7 +96,7 @@
                     "count": "{{pagination.count}}",
                     "skip": "{{pagination.skip}} + {{response.data.count}}"
                 },
-                "condition": "{{response.data.count}} > 0"
+                "condition": "{{response.data.count}} >= 0"
             },
             "headers": {
                 "Content-Type": "application/json",

@@ -1008,7 +1008,7 @@
                     "displayName": "Payment Link ID",
                     "displayType": "text",
                     "placeholder": "Enter A Payment Link ID (For Example: plink_00001)",
-                    "description": "Get a payment link by its ID.",
+                    "description": "Get a payment link details by its ID.",
                     "validation": {
                         "required": true
                     }
