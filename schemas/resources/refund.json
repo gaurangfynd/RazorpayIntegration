@@ -9,11 +9,6 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Get All Refunds",
-                        "value": "refund.getRefunds",
-                        "description": "Get details of all refunds."
-                    },
-                    {
                         "label": "Get Refund Details By ID",
                         "value": "refund.getRefundByRefundId",
                         "description": "Get refund details using the refund ID."

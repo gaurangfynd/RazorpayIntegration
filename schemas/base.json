@@ -50,7 +50,7 @@
                     {
                         "label": "Refund",
                         "value": "refund",
-                        "description": "Get refunds and get refund details by ID."
+                        "description": "Get refund details by ID."
                     },
                     {
                         "label": "Settlement",
