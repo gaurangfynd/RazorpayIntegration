@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -70,7 +70,7 @@
                 "meta": {
                     "displayName": "Currency",
                     "displayType": "select",
-                    "placeholder": "Select A Currency",
+                    "placeholder": "Select a currency",
                     "description": "Select the currency, ISO currency code (for example: INR).",
                     "validation": {
                         "required": true,
@@ -602,7 +602,7 @@
                 "meta": {
                     "displayName": "Amount",
                     "displayType": "number",
-                    "placeholder": "Enter Amount (In Smallest Unit)",
+                    "placeholder": "Enter amount (in the smallest unit)",
                     "description": "Amount in the smallest unit of the currency (for example, 100 = ₹1).",
                     "validation": {
                         "required": true
@@ -614,7 +614,7 @@
                 "meta": {
                     "displayName": "Receipt",
                     "displayType": "text",
-                    "placeholder": "Enter Receipt Reference (For Example: rcpt_0001)",
+                    "placeholder": "Enter a receipt reference (for example: rcpt_0001)",
                     "description": "Receipt ID for internal reference for the order (max: 40 characters).",
                     "validation": {
                         "required": false,
@@ -627,7 +627,7 @@
                 "meta": {
                     "displayName": "Notes",
                     "displayType": "keyvalue",
-                    "placeholder": "Enter Notes",
+                    "placeholder": "Enter notes",
                     "description": "Optional key-value notes for the order (up to 15 entries).",
                     "validation": {
                         "max": 15
@@ -677,7 +677,7 @@
                     "description": "Filter orders created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -698,7 +698,7 @@
                     "description": "Filter orders created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -707,7 +707,7 @@
                 "meta": {
                     "displayName": "Receipt",
                     "displayType": "text",
-                    "placeholder": "Enter A Receipt Value (For Example: rcpt_0001)",
+                    "placeholder": "Enter a receipt value (for example: rcpt_0001)",
                     "description": "Filter orders by receipt (the receipt value set while creating the order).",
                     "validation": {
                         "required": false
@@ -719,7 +719,7 @@
                 "meta": {
                     "displayType": "select",
                     "displayName": "Payment Authorization",
-                    "placeholder": "Select Payment Authorization Status",
+                    "placeholder": "Select payment authorization status",
                     "description": "Filter orders by payment authorization status. For dynamic input, use 1 for authorized payments and 0 for unauthorized payments.",
                     "validation": {
                         "required": false
@@ -784,7 +784,7 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter An Order ID (For Example: order_00001)",
+                    "placeholder": "Enter an order ID (for example: order_00001)",
                     "description": "Get an order by its ID.",
                     "validation": {
                         "required": true
@@ -818,7 +818,7 @@
                 "meta": {
                     "displayName": "Order ID",
                     "displayType": "text",
-                    "placeholder": "Enter An Order ID (For Example: order_00001)",
+                    "placeholder": "Enter an order ID (for example: order_00001)",
                     "description": "Get payments associated with an order using the order ID.",
                     "validation": {
                         "required": true

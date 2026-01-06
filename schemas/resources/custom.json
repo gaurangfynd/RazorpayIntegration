@@ -15,7 +15,7 @@
                 "description": "Select the operation you want to perform.",
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "dependencies": {
                     "conditions": [
                         {
@@ -76,7 +76,7 @@
                     "validation": {
                         "required": true
                     },
-                    "placeholder": "The HTTP Method To Be Used For The Request.",
+                    "placeholder": "Select an HTTP method",
                     "description": "The HTTP method to be used for the request.",
                     "displayName": "Method",
                     "displayType": "select"
@@ -91,7 +91,7 @@
                     "description": "The URL of the HTTP request.",
                     "displayName": "Base URL",
                     "displayType": "text",
-                    "placeholder": "Eg. https://www.example.com"
+                    "placeholder": "e.g., https://www.example.com"
                 },
                 "name": "base_url"
             },
@@ -169,7 +169,7 @@
                         "allowAdd": true
                     },
                     "description": "Optional query string parameters as key-value pairs.",
-                    "placeholder": "Optional Query String Parameters As Key-Value Pairs.",
+                    "placeholder": "Optional query string parameters as key-value pairs",
                     "displayName": "Query String",
                     "displayType": "keyvalue"
                 },
@@ -186,7 +186,7 @@
                     "description": "The Payload (Body) of the HTTP Request.",
                     "displayName": "Body",
                     "displayType": "code",
-                    "placeholder": "Enter JSON Body"
+                    "placeholder": "Enter JSON body"
                 },
                 "name": "body"
             }

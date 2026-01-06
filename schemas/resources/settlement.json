@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -53,7 +53,7 @@
                     "description": "Filter settlements created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -74,7 +74,7 @@
                     "description": "Filter settlements created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             }
@@ -121,7 +121,7 @@
                 "meta": {
                     "displayName": "Settlement ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Settlement ID (For Example: setl_00001)",
+                    "placeholder": "Enter a settlement ID (for example: setl_00001)",
                     "description": "Get a settlement by its ID.",
                     "validation": {
                         "required": true

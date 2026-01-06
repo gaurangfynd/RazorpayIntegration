@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -48,7 +48,7 @@
                     "description": "Filter refunds created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -69,7 +69,7 @@
                     "description": "Filter refunds created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             }
@@ -116,7 +116,7 @@
                 "meta": {
                     "displayName": "Refund ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Refund ID (For Example: rfnd_00001)",
+                    "placeholder": "Enter a refund ID (for example: rfnd_00001)",
                     "description": "Get a refund by its ID.",
                     "validation": {
                         "required": true

@@ -58,7 +58,7 @@
                     "description": "Razorpay Client ID used for Basic authentication.",
                     "displayName": "Client ID",
                     "displayType": "text",
-                    "placeholder": "Enter Client ID (For Example: rzp_test_...)"
+                    "placeholder": "Enter client ID (for example: rzp_test_...)"
                 },
                 "name": "client_id"
             },
@@ -73,7 +73,7 @@
                     "description": "Razorpay Client Secret used for Basic authentication.",
                     "displayName": "Client Secret",
                     "displayType": "password",
-                    "placeholder": "Enter Client Secret"
+                    "placeholder": "Enter client secret"
                 },
                 "name": "client_secret"
             }

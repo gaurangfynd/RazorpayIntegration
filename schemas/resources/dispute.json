@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -53,7 +53,7 @@
                     "description": "Filter disputes created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -74,7 +74,7 @@
                     "description": "Filter disputes created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             }
@@ -121,7 +121,7 @@
                 "meta": {
                     "displayName": "Dispute ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Dispute ID",
+                    "placeholder": "Enter a dispute ID",
                     "description": "Enter the dispute ID you want to get details for.",
                     "validation": {
                         "required": true

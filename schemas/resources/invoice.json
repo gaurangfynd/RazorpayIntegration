@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -58,7 +58,7 @@
                     "description": "Filter invoices created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -79,7 +79,7 @@
                     "description": "Filter invoices created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -88,7 +88,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Payment ID (For Example: pay_00001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Filter invoices by the payment ID associated with the invoice.",
                     "validation": {
                         "required": false
@@ -101,7 +101,7 @@
                 "meta": {
                     "displayName": "Receipt ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Receipt ID (For Example: rcpt_00001)",
+                    "placeholder": "Enter a receipt ID (for example: rcpt_00001)",
                     "description": "Filter invoices by receipt ID (the value set while creating the invoice).",
                     "validation": {
                         "required": false
@@ -114,7 +114,7 @@
                 "meta": {
                     "displayName": "Customer ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Customer ID (For Example: cust_00001)",
+                    "placeholder": "Enter a customer ID (for example: cust_00001)",
                     "description": "Filter invoices by customer ID.",
                     "validation": {
                         "required": false
@@ -168,7 +168,7 @@
                 "meta": {
                     "displayName": "Invoice ID",
                     "displayType": "text",
-                    "placeholder": "Enter An Invoice ID (For Example: inv_00001)",
+                    "placeholder": "Enter an invoice ID (for example: inv_00001)",
                     "description": "Get an invoice by its ID.",
                     "validation": {
                         "required": true
@@ -204,7 +204,7 @@
                 "meta": {
                     "displayName": "Subscription ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Subscription ID (For Example: sub_00001)",
+                    "placeholder": "Enter a subscription ID (for example: sub_00001)",
                     "description": "Get invoices for a subscription using the subscription ID.",
                     "validation": {
                         "required": true

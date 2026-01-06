@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -58,7 +58,7 @@
                     "description": "Filter payments created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -79,7 +79,7 @@
                     "description": "Filter payments created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             }
@@ -126,7 +126,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Payment ID (For Example: pay_00001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Get a payment by its ID.",
                     "validation": {
                         "required": true
@@ -160,7 +160,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Payment ID (For Example: pay_00001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Get card details for a payment using the payment ID.",
                     "validation": {
                         "required": true

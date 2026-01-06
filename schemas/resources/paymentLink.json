@@ -5,7 +5,7 @@
             "meta": {
                 "displayName": "Operation",
                 "displayType": "select",
-                "placeholder": "Select An Operation",
+                "placeholder": "Select an operation",
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
@@ -65,7 +65,7 @@
                 "meta": {
                     "displayName": "Currency",
                     "displayType": "select",
-                    "placeholder": "Select A Currency",
+                    "placeholder": "Select a currency",
                     "description": "Select the currency, ISO currency code (for example: INR).",
                     "validation": {
                         "required": true,
@@ -597,7 +597,7 @@
                 "meta": {
                     "displayName": "Amount",
                     "displayType": "number",
-                    "placeholder": "Enter The Amount",
+                    "placeholder": "Enter the amount",
                     "description": "Amount in the smallest unit of the currency. For example, to receive 300, enter 30000.",
                     "validation": {
                         "required": true
@@ -613,7 +613,7 @@
                     "displayName": "Accept Partial Payments",
                     "description": "Allow customers to make partial payments using this payment link.",
                     "displayType": "toggle",
-                    "placeholder": "Accept Partial Payments",
+                    "placeholder": "Accept partial payments",
                     "readOnly": false,
                     "value": false,
                     "validation": {
@@ -629,7 +629,7 @@
                 "meta": {
                     "displayName": "Minimum First Partial Amount",
                     "displayType": "number",
-                    "placeholder": "Enter Minimum First Partial Amount",
+                    "placeholder": "Enter the minimum first partial amount",
                     "description": "Minimum amount for the first partial payment (in the smallest unit of the currency).",
                     "validation": {
                         "required": true
@@ -653,7 +653,7 @@
                 "meta": {
                     "displayName": "Reference ID",
                     "displayType": "text",
-                    "placeholder": "Enter Reference ID",
+                    "placeholder": "Enter a reference ID",
                     "description": "Your internal reference for reconciliation (max: 40 characters).",
                     "validation": {
                         "required": false,
@@ -666,7 +666,7 @@
                 "meta": {
                     "displayName": "Description",
                     "displayType": "textarea",
-                    "placeholder": "Enter Payment Link Description",
+                    "placeholder": "Enter a payment link description",
                     "description": "Description shown to the customer on the payment link.",
                     "validation": {
                         "required": false,
@@ -695,7 +695,7 @@
                     "description": "Expire date at which the Payment link will expire. By default, a payment link will be valid for six months from the date of creation.",
                     "displayName": "Expire Date",
                     "displayType": "datetime",
-                    "placeholder": "Enter The Expire Date"
+                    "placeholder": "Enter the expiration date"
                 },
                 "name": "expire_by"
             },
@@ -711,7 +711,7 @@
                             "meta": {
                                 "displayName": "Customer Name",
                                 "displayType": "text",
-                                "placeholder": "Enter Customer Name",
+                                "placeholder": "Enter customer name",
                                 "description": "Customer name for the payment link.",
                                 "validation": {
                                     "required": false
@@ -723,7 +723,7 @@
                             "meta": {
                                 "displayName": "Customer Email",
                                 "displayType": "email",
-                                "placeholder": "Enter Customer Email",
+                                "placeholder": "Enter customer email",
                                 "description": "Customer email address for the payment link.",
                                 "validation": {
                                     "required": false
@@ -736,7 +736,7 @@
                                 "displayName": "Customer Phone Number",
                                 "description": "Customer phone number (for example: +919876543210).",
                                 "displayType": "phone",
-                                "placeholder": "Enter Customer Phone Number",
+                                "placeholder": "Enter customer phone number",
                                 "validation": {
                                     "required": false,
                                     "matchIsValidTel": true
@@ -757,7 +757,7 @@
                 "meta": {
                     "displayName": "Notes",
                     "displayType": "keyvalue",
-                    "placeholder": "Enter Notes",
+                    "placeholder": "Enter notes",
                     "description": "Optional key-value notes for the payment link (up to 15 entries).",
                     "validation": {
                         "max": 15
@@ -799,7 +799,7 @@
                                 "displayName": "Send SMS Notifications",
                                 "description": "Let Razorpay send SMS notifications for this payment link.",
                                 "displayType": "toggle",
-                                "placeholder": "Send SMS Notifications",
+                                "placeholder": "Send SMS notifications",
                                 "readOnly": false,
                                 "value": false,
                                 "validation": {
@@ -816,7 +816,7 @@
                                 "displayName": "Send Email Notifications",
                                 "description": "Let Razorpay send email notifications for this payment link.",
                                 "displayType": "toggle",
-                                "placeholder": "Send Email Notifications",
+                                "placeholder": "Send email notifications",
                                 "readOnly": false,
                                 "value": false,
                                 "validation": {
@@ -836,7 +836,7 @@
                     "displayName": "Send Reminders",
                     "description": "Let Razorpay send reminders for this payment link.",
                     "displayType": "toggle",
-                    "placeholder": "Send Reminders",
+                    "placeholder": "Send reminders",
                     "readOnly": false,
                     "value": false,
                     "validation": {
@@ -853,7 +853,7 @@
                     "displayName": "Create UPI Link",
                     "description": "Set this to true to create a UPI payment link. If omitted or set to false, a standard payment link is created instead.",
                     "displayType": "toggle",
-                    "placeholder": "UPI Link",
+                    "placeholder": "UPI link",
                     "readOnly": false,
                     "value": false,
                     "validation": {
@@ -925,7 +925,7 @@
                     "description": "Filter payment links created after this time.",
                     "displayName": "From",
                     "displayType": "datetime",
-                    "placeholder": "Select Start Date And Time"
+                    "placeholder": "Select start date and time"
                 },
                 "name": "from"
             },
@@ -946,7 +946,7 @@
                     "description": "Filter payment links created before this time.",
                     "displayName": "To",
                     "displayType": "datetime",
-                    "placeholder": "Select End Date And Time"
+                    "placeholder": "Select end date and time"
                 },
                 "name": "to"
             },
@@ -955,7 +955,7 @@
                 "meta": {
                     "displayName": "Payment ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Payment ID (For Example: pay_00001)",
+                    "placeholder": "Enter a payment ID (for example: pay_00001)",
                     "description": "Unique identifier of the payment associated with the Payment Link.",
                     "validation": {
                         "required": false
@@ -967,7 +967,7 @@
                 "meta": {
                     "displayName": "Reference ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Reference ID",
+                    "placeholder": "Enter a reference ID",
                     "description": "Unique reference number entered while creating the Payment Link.",
                     "validation": {
                         "required": false
@@ -1007,7 +1007,7 @@
                 "meta": {
                     "displayName": "Payment Link ID",
                     "displayType": "text",
-                    "placeholder": "Enter A Payment Link ID (For Example: plink_00001)",
+                    "placeholder": "Enter a payment link ID (for example: plink_00001)",
                     "description": "Get a payment link details by its ID.",
                     "validation": {
                         "required": true
