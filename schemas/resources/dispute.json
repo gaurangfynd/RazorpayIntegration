@@ -14,7 +14,7 @@
                         "description": "Get all disputes raised by customers."
                     },
                     {
-                        "label": "Get Dispute Details By ID",
+                        "label": "Get Dispute Details by ID",
                         "value": "dispute.getDisputeByDisputeId",
                         "description": "Get dispute details using the dispute ID."
                     }

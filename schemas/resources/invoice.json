@@ -14,12 +14,12 @@
                         "description": "Get details of all invoices."
                     },
                     {
-                        "label": "Get Invoice Details By ID",
+                        "label": "Get Invoice Details by ID",
                         "value": "invoice.getInvoiceByInvoiceId",
                         "description": "Get invoice details using the invoice ID."
                     },
                     {
-                        "label": "Get All Invoices For A Subscription",
+                        "label": "Get All Invoices for a Subscription",
                         "value": "invoice.getInvoicesBySubscriptionId",
                         "description": "Get all invoices for a subscription using the subscription ID."
                     }

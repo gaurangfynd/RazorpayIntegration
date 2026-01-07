@@ -19,7 +19,7 @@
                         "description": "Get details of all standard payment links."
                     },
                     {
-                        "label": "Get Payment Link Details By ID",
+                        "label": "Get Payment Link Details by ID",
                         "value": "paymentLink.getPaymentLinkById",
                         "description": "Get payment link details using the payment link ID."
                     }
@@ -83,19 +83,19 @@
                         },
                         {
                             "value": "ALL",
-                            "label": "Albanian lek"
+                            "label": "Albanian Lek"
                         },
                         {
                             "value": "AMD",
-                            "label": "Armenian dram"
+                            "label": "Armenian Dram"
                         },
                         {
                             "value": "AUD",
-                            "label": "Australian dollar"
+                            "label": "Australian Dollar"
                         },
                         {
                             "value": "AWG",
-                            "label": "Aruban florin"
+                            "label": "Aruban Florin"
                         },
                         {
                             "value": "AZN",
@@ -107,11 +107,11 @@
                         },
                         {
                             "value": "BBD",
-                            "label": "Barbadian dollar"
+                            "label": "Barbadian Dollar"
                         },
                         {
                             "value": "BDT",
-                            "label": "Bangladeshi taka"
+                            "label": "Bangladeshi Taka"
                         },
                         {
                             "value": "BGN",
@@ -127,15 +127,15 @@
                         },
                         {
                             "value": "BMD",
-                            "label": "Bermudian dollar"
+                            "label": "Bermudian Dollar"
                         },
                         {
                             "value": "BND",
-                            "label": "Brunei dollar"
+                            "label": "Brunei Dollar"
                         },
                         {
                             "value": "BOB",
-                            "label": "Bolivian boliviano"
+                            "label": "Bolivian Boliviano"
                         },
                         {
                             "value": "BRL",
@@ -143,7 +143,7 @@
                         },
                         {
                             "value": "BSD",
-                            "label": "Bahamian dollar"
+                            "label": "Bahamian Dollar"
                         },
                         {
                             "value": "BTN",
@@ -151,19 +151,19 @@
                         },
                         {
                             "value": "BWP",
-                            "label": "Botswana pula"
+                            "label": "Botswana Pula"
                         },
                         {
                             "value": "BZD",
-                            "label": "Belize dollar"
+                            "label": "Belize Dollar"
                         },
                         {
                             "value": "CAD",
-                            "label": "Canadian dollar"
+                            "label": "Canadian Dollar"
                         },
                         {
                             "value": "CHF",
-                            "label": "Swiss franc"
+                            "label": "Swiss Franc"
                         },
                         {
                             "value": "CLP",
@@ -171,19 +171,19 @@
                         },
                         {
                             "value": "CNY",
-                            "label": "Chinese yuan renminbi"
+                            "label": "Chinese Yuan Renminbi"
                         },
                         {
                             "value": "COP",
-                            "label": "Colombian peso"
+                            "label": "Colombian Peso"
                         },
                         {
                             "value": "CRC",
-                            "label": "Costa Rican colon"
+                            "label": "Costa Rican Colon"
                         },
                         {
                             "value": "CUP",
-                            "label": "Cuban peso"
+                            "label": "Cuban Peso"
                         },
                         {
                             "value": "CVE",
@@ -191,7 +191,7 @@
                         },
                         {
                             "value": "CZK",
-                            "label": "Czech koruna"
+                            "label": "Czech Koruna"
                         },
                         {
                             "value": "DJF",
@@ -199,35 +199,35 @@
                         },
                         {
                             "value": "DKK",
-                            "label": "Danish krone"
+                            "label": "Danish Krone"
                         },
                         {
                             "value": "DOP",
-                            "label": "Dominican peso"
+                            "label": "Dominican Peso"
                         },
                         {
                             "value": "DZD",
-                            "label": "Algerian dinar"
+                            "label": "Algerian Dinar"
                         },
                         {
                             "value": "EGP",
-                            "label": "Egyptian pound"
+                            "label": "Egyptian Pound"
                         },
                         {
                             "value": "ETB",
-                            "label": "Ethiopian birr"
+                            "label": "Ethiopian Birr"
                         },
                         {
                             "value": "EUR",
-                            "label": "European euro"
+                            "label": "European Euro"
                         },
                         {
                             "value": "FJD",
-                            "label": "Fijian dollar"
+                            "label": "Fijian Dollar"
                         },
                         {
                             "value": "GBP",
-                            "label": "Pound sterling"
+                            "label": "Pound Sterling"
                         },
                         {
                             "value": "GHS",
@@ -235,11 +235,11 @@
                         },
                         {
                             "value": "GIP",
-                            "label": "Gibraltar pound"
+                            "label": "Gibraltar Pound"
                         },
                         {
                             "value": "GMD",
-                            "label": "Gambian dalasi"
+                            "label": "Gambian Dalasi"
                         },
                         {
                             "value": "GNF",
@@ -247,43 +247,43 @@
                         },
                         {
                             "value": "GTQ",
-                            "label": "Guatemalan quetzal"
+                            "label": "Guatemalan Quetzal"
                         },
                         {
                             "value": "GYD",
-                            "label": "Guyanese dollar"
+                            "label": "Guyanese Dollar"
                         },
                         {
                             "value": "HKD",
-                            "label": "Hong Kong dollar"
+                            "label": "Hong Kong Dollar"
                         },
                         {
                             "value": "HNL",
-                            "label": "Honduran lempira"
+                            "label": "Honduran Lempira"
                         },
                         {
                             "value": "HRK",
-                            "label": "Croatian kuna"
+                            "label": "Croatian Kuna"
                         },
                         {
                             "value": "HTG",
-                            "label": "Haitian gourde"
+                            "label": "Haitian Gourde"
                         },
                         {
                             "value": "HUF",
-                            "label": "Hungarian forint"
+                            "label": "Hungarian Forint"
                         },
                         {
                             "value": "IDR",
-                            "label": "Indonesian rupiah"
+                            "label": "Indonesian Rupiah"
                         },
                         {
                             "value": "ILS",
-                            "label": "Israeli new shekel"
+                            "label": "Israeli New Shekel"
                         },
                         {
                             "value": "INR",
-                            "label": "Indian rupee"
+                            "label": "Indian Rupee"
                         },
                         {
                             "value": "IQD",
@@ -295,7 +295,7 @@
                         },
                         {
                             "value": "JMD",
-                            "label": "Jamaican dollar"
+                            "label": "Jamaican Dollar"
                         },
                         {
                             "value": "JOD",
@@ -307,15 +307,15 @@
                         },
                         {
                             "value": "KES",
-                            "label": "Kenyan shilling"
+                            "label": "Kenyan Shilling"
                         },
                         {
                             "value": "KGS",
-                            "label": "Kyrgyzstani som"
+                            "label": "Kyrgyzstani Som"
                         },
                         {
                             "value": "KHR",
-                            "label": "Cambodian riel"
+                            "label": "Cambodian Riel"
                         },
                         {
                             "value": "KMF",
@@ -331,35 +331,35 @@
                         },
                         {
                             "value": "KYD",
-                            "label": "Cayman Islands dollar"
+                            "label": "Cayman Islands Dollar"
                         },
                         {
                             "value": "KZT",
-                            "label": "Kazakhstani tenge"
+                            "label": "Kazakhstani Tenge"
                         },
                         {
                             "value": "LAK",
-                            "label": "Lao kip"
+                            "label": "Lao Kip"
                         },
                         {
                             "value": "LKR",
-                            "label": "Sri Lankan rupee"
+                            "label": "Sri Lankan Rupee"
                         },
                         {
                             "value": "LRD",
-                            "label": "Liberian dollar"
+                            "label": "Liberian Dollar"
                         },
                         {
                             "value": "LSL",
-                            "label": "Lesotho loti"
+                            "label": "Lesotho Loti"
                         },
                         {
                             "value": "MAD",
-                            "label": "Moroccan dirham"
+                            "label": "Moroccan Dirham"
                         },
                         {
                             "value": "MDL",
-                            "label": "Moldovan leu"
+                            "label": "Moldovan Leu"
                         },
                         {
                             "value": "MGA",
@@ -367,39 +367,39 @@
                         },
                         {
                             "value": "MKD",
-                            "label": "Macedonian denar"
+                            "label": "Macedonian Denar"
                         },
                         {
                             "value": "MMK",
-                            "label": "Myanmar kyat"
+                            "label": "Myanmar Kyat"
                         },
                         {
                             "value": "MNT",
-                            "label": "Mongolian tugrik"
+                            "label": "Mongolian Tugrik"
                         },
                         {
                             "value": "MOP",
-                            "label": "Macanese pataca"
+                            "label": "Macanese Pataca"
                         },
                         {
                             "value": "MUR",
-                            "label": "Mauritian rupee"
+                            "label": "Mauritian Rupee"
                         },
                         {
                             "value": "MVR",
-                            "label": "Maldivian rufiyaa"
+                            "label": "Maldivian Rufiyaa"
                         },
                         {
                             "value": "MWK",
-                            "label": "Malawian kwacha"
+                            "label": "Malawian Kwacha"
                         },
                         {
                             "value": "MXN",
-                            "label": "Mexican peso"
+                            "label": "Mexican Peso"
                         },
                         {
                             "value": "MYR",
-                            "label": "Malaysian ringgit"
+                            "label": "Malaysian Ringgit"
                         },
                         {
                             "value": "MZN",
@@ -407,27 +407,27 @@
                         },
                         {
                             "value": "NAD",
-                            "label": "Namibian dollar"
+                            "label": "Namibian Dollar"
                         },
                         {
                             "value": "NGN",
-                            "label": "Nigerian naira"
+                            "label": "Nigerian Naira"
                         },
                         {
                             "value": "NIO",
-                            "label": "Nicaraguan cordoba"
+                            "label": "Nicaraguan Cordoba"
                         },
                         {
                             "value": "NOK",
-                            "label": "Norwegian krone"
+                            "label": "Norwegian Krone"
                         },
                         {
                             "value": "NPR",
-                            "label": "Nepalese rupee"
+                            "label": "Nepalese Rupee"
                         },
                         {
                             "value": "NZD",
-                            "label": "New Zealand dollar"
+                            "label": "New Zealand Dollar"
                         },
                         {
                             "value": "OMR",
@@ -435,19 +435,19 @@
                         },
                         {
                             "value": "PEN",
-                            "label": "Peruvian sol"
+                            "label": "Peruvian Sol"
                         },
                         {
                             "value": "PGK",
-                            "label": "Papua New Guinean kina"
+                            "label": "Papua New Guinean Kina"
                         },
                         {
                             "value": "PHP",
-                            "label": "Philippine peso"
+                            "label": "Philippine Peso"
                         },
                         {
                             "value": "PKR",
-                            "label": "Pakistani rupee"
+                            "label": "Pakistani Rupee"
                         },
                         {
                             "value": "PLN",
@@ -459,7 +459,7 @@
                         },
                         {
                             "value": "QAR",
-                            "label": "Qatari riyal"
+                            "label": "Qatari Riyal"
                         },
                         {
                             "value": "RON",
@@ -471,7 +471,7 @@
                         },
                         {
                             "value": "RUB",
-                            "label": "Russian ruble"
+                            "label": "Russian Ruble"
                         },
                         {
                             "value": "RWF",
@@ -479,39 +479,39 @@
                         },
                         {
                             "value": "SAR",
-                            "label": "Saudi Arabian riyal"
+                            "label": "Saudi Arabian Riyal"
                         },
                         {
                             "value": "SCR",
-                            "label": "Seychellois rupee"
+                            "label": "Seychellois Rupee"
                         },
                         {
                             "value": "SEK",
-                            "label": "Swedish krona"
+                            "label": "Swedish Krona"
                         },
                         {
                             "value": "SGD",
-                            "label": "Singapore dollar"
+                            "label": "Singapore Dollar"
                         },
                         {
                             "value": "SLL",
-                            "label": "Sierra Leonean leone"
+                            "label": "Sierra Leonean Leone"
                         },
                         {
                             "value": "SOS",
-                            "label": "Somali shilling"
+                            "label": "Somali Shilling"
                         },
                         {
                             "value": "SVC",
-                            "label": "Salvadoran colón"
+                            "label": "Salvadoran Colón"
                         },
                         {
                             "value": "SZL",
-                            "label": "Swazi lilangeni"
+                            "label": "Swazi Lilangeni"
                         },
                         {
                             "value": "THB",
-                            "label": "Thai baht"
+                            "label": "Thai Baht"
                         },
                         {
                             "value": "TND",
@@ -523,7 +523,7 @@
                         },
                         {
                             "value": "TTD",
-                            "label": "Trinidad and Tobago dollar"
+                            "label": "Trinidad and Tobago Dollar"
                         },
                         {
                             "value": "TWD",
@@ -531,7 +531,7 @@
                         },
                         {
                             "value": "TZS",
-                            "label": "Tanzanian shilling"
+                            "label": "Tanzanian Shilling"
                         },
                         {
                             "value": "UAH",
@@ -543,15 +543,15 @@
                         },
                         {
                             "value": "USD",
-                            "label": "United States dollar"
+                            "label": "United States Dollar"
                         },
                         {
                             "value": "UYU",
-                            "label": "Uruguayan peso"
+                            "label": "Uruguayan Peso"
                         },
                         {
                             "value": "UZS",
-                            "label": "Uzbekistani so'm"
+                            "label": "Uzbekistani So'm"
                         },
                         {
                             "value": "VND",
@@ -579,11 +579,11 @@
                         },
                         {
                             "value": "YER",
-                            "label": "Yemeni rial"
+                            "label": "Yemeni Rial"
                         },
                         {
                             "value": "ZAR",
-                            "label": "South African rand"
+                            "label": "South African Rand"
                         },
                         {
                             "value": "ZMW",

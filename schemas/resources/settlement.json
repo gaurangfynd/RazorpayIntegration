@@ -14,7 +14,7 @@
                         "description": "Get details of all settlements."
                     },
                     {
-                        "label": "Get Settlement Details By ID",
+                        "label": "Get Settlement Details by ID",
                         "value": "settlement.getSettlementBySettlementId",
                         "description": "Get settlement details using the settlement ID."
                     }

@@ -9,7 +9,7 @@
                 "description": "Select the operation you want to perform.",
                 "options": [
                     {
-                        "label": "Get Refund Details By ID",
+                        "label": "Get Refund Details by ID",
                         "value": "refund.getRefundByRefundId",
                         "description": "Get refund details using the refund ID."
                     }

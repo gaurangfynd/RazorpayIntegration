@@ -14,12 +14,12 @@
                         "description": "Get a list of payments with optional filters (from, to)."
                     },
                     {
-                        "label": "Get Payment Details By ID",
+                        "label": "Get Payment Details by ID",
                         "value": "payment.getPaymentByPaymentId",
                         "description": "Get payment details using the payment ID."
                     },
                     {
-                        "label": "Get Card Details For A Payment",
+                        "label": "Get Card Details for a Payment",
                         "value": "payment.getCardDetailsOfPayment",
                         "description": "Get card details for a payment."
                     }
