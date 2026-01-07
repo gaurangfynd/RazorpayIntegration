@@ -76,7 +76,7 @@
                     "validation": {
                         "required": true
                     },
-                    "placeholder": "Select an HTTP method",
+                    "placeholder": "Select a HTTP method",
                     "description": "The HTTP method to be used for the request.",
                     "displayName": "Method",
                     "displayType": "select"
