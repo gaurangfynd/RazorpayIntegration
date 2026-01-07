@@ -41,6 +41,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -62,6 +64,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -108,9 +112,6 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            },
-            "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },
@@ -133,7 +134,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/settlements/",
             "transform": {
-                "url": "function transformURL() {\n  var sid = (typeof parameters !== 'undefined' && parameters && parameters.settlementId != null)\n    ? parameters.settlementId\n    : '{{parameters.settlementId}}';\n\n  var settlementId = sid;\n\n  if (settlementId && typeof settlementId === 'object') {\n    settlementId = settlementId.value || settlementId.id || settlementId.settlementId || (settlementId.data && (settlementId.data.value || settlementId.data.id || settlementId.data.settlementId));\n  }\n\n  if (typeof settlementId === 'string') {\n    var raw = settlementId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        settlementId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.settlementId || (obj.data && (obj.data.value || obj.data.id || obj.data.settlementId)) || raw\n          : raw;\n      } catch (e) {\n        settlementId = raw;\n      }\n    } else {\n      settlementId = raw;\n    }\n  }\n\n  if (!settlementId || settlementId === '[object Object]') throw new Error('Invalid settlementId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(settlementId));\n}\nreturn transformURL();",
+                "url": "function transformURL(){var settlementId=(typeof parameters!=='undefined'&&parameters&&parameters.settlementId!=null)?parameters.settlementId:'{{parameters.settlementId}}';settlementId=String(settlementId).trim().replace(/^\\\"|\\\"$/g,'');if(!settlementId)throw new Error('Invalid settlementId');return (url.endsWith('/')?url:url+'/')+encodeURIComponent(settlementId);}return transformURL();",
                 "error": "const obj = { message: error.message === 'undefined'  ? error.description : error.message, code: error && error.code != null ? error.code : null }; return obj;"
             },
             "headers": {

@@ -46,6 +46,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -67,6 +69,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -113,9 +117,6 @@
                     "message": "{{response.data.error.description}}",
                     "code": "{{response.status}}"
                 }
-            },
-            "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && v.trim() !== '' ? v.trim() : null; const from = clean(fromRaw); const to = clean(toRaw); if (from) { const ts = new Date(from).getTime(); if (!isNaN(ts)) params.from = Math.floor(ts / 1000); } if (to) { const ts = new Date(to).getTime(); if (!isNaN(ts)) params.to = Math.floor(ts / 1000); } return params;"
             }
         }
     },
@@ -138,7 +139,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payments/",
             "transform": {
-                "url": "function transformURL() {\n  var pid = (typeof parameters !== 'undefined' && parameters && parameters.paymentId != null)\n    ? parameters.paymentId\n    : '{{parameters.paymentId}}';\n\n  var paymentId = pid;\n\n  if (paymentId && typeof paymentId === 'object') {\n    paymentId = paymentId.value || paymentId.id || paymentId.paymentId || (paymentId.data && (paymentId.data.value || paymentId.data.id || paymentId.data.paymentId));\n  }\n\n  if (typeof paymentId === 'string') {\n    var raw = paymentId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        paymentId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.paymentId || (obj.data && (obj.data.value || obj.data.id || obj.data.paymentId)) || raw\n          : raw;\n      } catch (e) {\n        paymentId = raw;\n      }\n    } else {\n      paymentId = raw;\n    }\n  }\n\n  if (!paymentId || paymentId === '[object Object]') throw new Error('Invalid paymentId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(paymentId));\n}\nreturn transformURL();"
+                "url": "function transformURL(){var paymentId=(typeof parameters!=='undefined'&&parameters&&parameters.paymentId!=null)?parameters.paymentId:'{{parameters.paymentId}}';paymentId=String(paymentId).trim().replace(/^\\\"|\\\"$/g,'');if(!paymentId)throw new Error('Invalid paymentId');return (url.endsWith('/')?url:url+'/')+encodeURIComponent(paymentId);}return transformURL();"
             },
             "headers": {
                 "Content-Type": "application/json",
@@ -172,7 +173,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payments/",
             "transform": {
-                "url": "function transformURL() {\n  var pid = (typeof parameters !== 'undefined' && parameters && parameters.paymentId != null)\n    ? parameters.paymentId\n    : '{{parameters.paymentId}}';\n\n  var paymentId = pid;\n\n  if (paymentId && typeof paymentId === 'object') {\n    paymentId = paymentId.value || paymentId.id || paymentId.paymentId || (paymentId.data && (paymentId.data.value || paymentId.data.id || paymentId.data.paymentId));\n  }\n\n  if (typeof paymentId === 'string') {\n    var raw = paymentId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        paymentId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.paymentId || (obj.data && (obj.data.value || obj.data.id || obj.data.paymentId)) || raw\n          : raw;\n      } catch (e) {\n        paymentId = raw;\n      }\n    } else {\n      paymentId = raw;\n    }\n  }\n\n  if (!paymentId || paymentId === '[object Object]') throw new Error('Invalid paymentId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(paymentId)) + '/card';\n}\nreturn transformURL();"
+                "url": "function transformURL(){var paymentId=(typeof parameters!=='undefined'&&parameters&&parameters.paymentId!=null)?parameters.paymentId:'{{parameters.paymentId}}';paymentId=String(paymentId).trim().replace(/^\\\"|\\\"$/g,'');if(!paymentId)throw new Error('Invalid paymentId');return (url.endsWith('/')?url:url+'/')+encodeURIComponent(paymentId)+'/card';}return transformURL();"
             },
             "headers": {
                 "Content-Type": "application/json",

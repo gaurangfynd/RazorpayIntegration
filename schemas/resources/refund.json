@@ -36,6 +36,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -57,6 +59,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -97,9 +101,6 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-            "transform": {
-                "qs": "const params = { ...qs }; const fromRaw = \"{{parameters.from}}\"; const toRaw = \"{{parameters.to}}\"; const clean = v => v && v !== 'undefined' && v !== 'null' && String(v).trim() !== '' ? String(v).trim() : null; const toUnix = v => { v = clean(v); if (!v) return null; if (/^\\\\d+$/.test(v)) { const n = parseInt(v, 10); if (isNaN(n)) return null; return v.length >= 13 ? Math.floor(n / 1000) : n; } const ts = new Date(v).getTime(); return isNaN(ts) ? null : Math.floor(ts / 1000); }; const from = toUnix(fromRaw); const to = toUnix(toRaw); if (from != null) params.from = from; else delete params.from; if (to != null) params.to = to; else delete params.to; return params;"
-            },
             "response": {
                 "output": "{{response.data.items}}",
                 "error": {
@@ -128,7 +129,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/refunds/",
             "transform": {
-                "url": "function transformURL() {\n  var rid = (typeof parameters !== 'undefined' && parameters && parameters.refundId != null)\n    ? parameters.refundId\n    : '{{parameters.refundId}}';\n\n  var refundId = rid;\n\n  if (refundId && typeof refundId === 'object') {\n    refundId = refundId.value || refundId.id || refundId.refundId || (refundId.data && (refundId.data.value || refundId.data.id || refundId.data.refundId));\n  }\n\n  if (typeof refundId === 'string') {\n    var raw = refundId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        refundId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.refundId || (obj.data && (obj.data.value || obj.data.id || obj.data.refundId)) || raw\n          : raw;\n      } catch (e) {\n        refundId = raw;\n      }\n    } else {\n      refundId = raw;\n    }\n  }\n\n  if (!refundId || refundId === '[object Object]') throw new Error('Invalid refundId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(refundId));\n}\nreturn transformURL();",
+                "url": "function transformURL(){var refundId=(typeof parameters!=='undefined'&&parameters&&parameters.refundId!=null)?parameters.refundId:'{{parameters.refundId}}';refundId=String(refundId).trim().replace(/^\\\"|\\\"$/g,'');if(!refundId)throw new Error('Invalid refundId');return (url.endsWith('/')?url:url+'/')+encodeURIComponent(refundId);}return transformURL();",
                 "error": "const obj = { message: error.message === 'undefined'  ? error.description : error.message, code: error && error.code != null ? error.code : null }; return obj;"
             },
             "headers": {
