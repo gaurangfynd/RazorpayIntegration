@@ -47,9 +47,27 @@
                 "Content-Type": "application/json",
                 "Authorization": "Basic convertBufferBase64String({{secrets.client_id}}:{{secrets.client_secret}})"
             },
-            "body": "{{parameters}}",
+            "body": {
+                "amount": "{{parameters.amount}}",
+                "currency": "{{parameters.currency}}",
+                "reference_id": "{{parameters.reference_id}}",
+                "description": "{{parameters.description}}",
+                "notes": "{{parameters.notes}}",
+                "callback_url": "{{parameters.callback_url}}",
+                "callback_method": "{{parameters.callback_url ? parameters.callback_method : null}}",
+                "customer": "{{parameters.customer}}",
+                "reminder_enable": "{{parameters.reminder_enable}}",
+                "notify": {
+                    "sms": "{{parameters.notify_sms}}",
+                    "email": "{{parameters.notify_email}}"
+                },
+                "expire_by": "{{parameters.expire_by}}",
+                "upi_link": "{{parameters.upi_link}}",
+                "accept_partial": "{{parameters.accept_partial}}",
+                "first_min_partial_amount": "{{parameters.accept_partial ? parameters.first_min_partial_amount : null}}"
+            },
             "transform": {
-                "body": "const src=(body&&typeof body==='object')?body:{};const unwrap=v=>{if(v&&typeof v==='object'){if(v.value!=null)return v.value;if(v.id!=null)return v.id;if(v.data&&v.data.value!=null)return v.data.value;if(v.data&&v.data.id!=null)return v.data.id;}return v;};const exists=v=>v!==undefined&&v!==null;const cleanStr=v=>{v=unwrap(v);if(!exists(v))return null;const s=String(v).trim();if(!s||s==='undefined'||s==='null')return null;return s;};const toBool=v=>{v=unwrap(v);if(!exists(v))return null;if(typeof v==='boolean')return v;if(v===1||v==='1')return true;if(v===0||v==='0')return false;const s=String(v).trim().toLowerCase();if(s==='true')return true;if(s==='false')return false;return null;};const toInt=v=>{v=unwrap(v);if(!exists(v))return null;const n=Number(v);if(!isFinite(n))return null;return Math.floor(n);};const toExpire=v=>{v=unwrap(v);if(!exists(v))return null;if(typeof v==='number'&&isFinite(v)){let n=Math.floor(v);if(n>1e12)n=Math.floor(n/1000);return n;}const s=String(v).trim();if(!s)return null;const num=Number(s);if(!isNaN(num)&&isFinite(num)){let n=Math.floor(num);if(n>1e12)n=Math.floor(n/1000);return n;}const ts=new Date(s).getTime();return isNaN(ts)?null:Math.floor(ts/1000);};const out={};const upi=toBool(src.upi_link);if(exists(upi))out.upi_link=upi;const amt=toInt(src.amount);if(exists(amt))out.amount=amt;const cur=cleanStr(src.currency);if(cur)out.currency=cur.toUpperCase();const ap=toBool(src.accept_partial);if(exists(ap))out.accept_partial=ap;const fmp=toInt(src.first_min_partial_amount);if(exists(fmp))out.first_min_partial_amount=fmp;const ex=toExpire(src.expire_by);if(exists(ex))out.expire_by=ex;const ref=cleanStr(src.reference_id);if(ref)out.reference_id=ref;const desc=cleanStr(src.description);if(desc)out.description=desc;const csrc=(src.customer&&typeof src.customer==='object')?src.customer:{};const cust={};const nm=cleanStr(csrc.name);if(nm)cust.name=nm;const em=cleanStr(csrc.email);if(em)cust.email=em;const ct=cleanStr(csrc.contact);if(ct)cust.contact=String(ct).replace(/\\s+/g,'');if(Object.keys(cust).length)out.customer=cust;const nsrc=(src.notify&&typeof src.notify==='object')?src.notify:{};const notif={};const ns=toBool(nsrc.sms);if(exists(ns))notif.sms=ns;const ne=toBool(nsrc.email);if(exists(ne))notif.email=ne;if(Object.keys(notif).length)out.notify=notif;const re=toBool(src.reminder_enable);if(exists(re))out.reminder_enable=re;if(src.notes&&typeof src.notes==='object')out.notes=src.notes;else{const n=cleanStr(src.notes);if(n){try{out.notes=JSON.parse(n);}catch(e){out.notes={note:n};}}}const cb=cleanStr(src.callback_url);if(cb)out.callback_url=cb;const cm=cleanStr(src.callback_method);if(cm)out.callback_method=cm.toLowerCase();return out;"
+                "body": "const obj = JSON.parse(JSON.stringify(body)); if (obj.customer && typeof obj.customer.contact === 'string') { const cleaned = obj.customer.contact.replace(/\\s+/g, ''); obj.customer.contact = cleaned === '' ? null : cleaned; } return obj;"
             },
             "response": {
                 "output": "{{response.data}}",
@@ -683,6 +701,8 @@
                     "htmlProps": {
                         "format": "YYYY-MM-DD HH:mm:ss",
                         "disabled": false,
+                        "outputFormat": "unix",
+                        "unixUnit": "seconds",
                         "timeSteps": {
                             "hours": 1,
                             "minutes": 5,
@@ -1020,7 +1040,7 @@
             "method": "GET",
             "url": "https://api.razorpay.com/v1/payment_links/",
             "transform": {
-                "url": "function transformURL() {\n  var plid = (typeof parameters !== 'undefined' && parameters && parameters.paymentLinkId != null)\n    ? parameters.paymentLinkId\n    : '{{parameters.paymentLinkId}}';\n\n  var paymentLinkId = plid;\n\n  if (paymentLinkId && typeof paymentLinkId === 'object') {\n    paymentLinkId = paymentLinkId.value || paymentLinkId.id || paymentLinkId.paymentLinkId || (paymentLinkId.data && (paymentLinkId.data.value || paymentLinkId.data.id || paymentLinkId.data.paymentLinkId));\n  }\n\n  if (typeof paymentLinkId === 'string') {\n    var raw = paymentLinkId.trim().replace(/^\"|\"$/g, '');\n    if ((raw[0] === '{' && raw[raw.length - 1] === '}') || (raw[0] === '[' && raw[raw.length - 1] === ']')) {\n      try {\n        var obj = JSON.parse(raw);\n        if (Array.isArray(obj)) obj = obj[0];\n        paymentLinkId = obj && typeof obj === 'object'\n          ? obj.value || obj.id || obj.paymentLinkId || (obj.data && (obj.data.value || obj.data.id || obj.data.paymentLinkId)) || raw\n          : raw;\n      } catch (e) {\n        paymentLinkId = raw;\n      }\n    } else {\n      paymentLinkId = raw;\n    }\n  }\n\n  if (!paymentLinkId || paymentLinkId === '[object Object]') throw new Error('Invalid paymentLinkId');\n\n  return (url.endsWith('/') ? url : url + '/') + encodeURIComponent(String(paymentLinkId));\n}\nreturn transformURL();",
+                "url": "function transformURL(){var paymentLinkId=(typeof parameters!=='undefined'&&parameters&&parameters.paymentLinkId!=null)?parameters.paymentLinkId:'{{parameters.paymentLinkId}}';paymentLinkId=String(paymentLinkId).trim().replace(/^\\\"|\\\"$/g,'');if(!paymentLinkId)throw new Error('Invalid paymentLinkId');return (url.endsWith('/')?url:url+'/')+encodeURIComponent(paymentLinkId);}return transformURL();",
                 "error": "const obj = { message: error.message === 'undefined'  ? error.description : error.message, code: error && error.code != null ? error.code : null }; return obj;"
             },
             "headers": {
